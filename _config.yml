@@ -29,6 +29,8 @@ twitter_username:
 github_username:  mkolarek
 linkedin_username: mkolarek
 
+show_excerpts: true
+
 # Build settings
 theme: minima
 plugins:
