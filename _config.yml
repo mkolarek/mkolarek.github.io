@@ -19,13 +19,15 @@
 # in the templates via {{ site.myvariable }}.
 
 title: mkolarek's page
+author: Marko Kolarek
 email: marko.kolarek@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Personal web page of Marko Kolarek.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: markolarek
+twitter_username:
 github_username:  mkolarek
+linkedin: mkolarek
 
 # Build settings
 theme: minima
