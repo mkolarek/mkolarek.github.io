@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Welcome."
+date:   2021-05-13 12:00:00 +0200
+categories: general
+---
+Hi everyone and welcome (once again) to my personal web page. If you've been here before, this is another reset (probably something like the 5th one) but I intend it to be the last one.
+
+Regarding the content, I plan to post mostly technical content related to coding (short tutorials, code snippets, etc.).
+
+Regarding the page setup, this is a completely vanilla [Github Pages](https://pages.github.com/) setup, without any tracking, comments, or dynamic content whatsoever. This is to keep the page as simple as possible while also protecting the readers (ie. your) privacy. If you would like to interact with me, you can either contact me on my [Linkedin](https://www.linkedin.com/in/kolarek) or the old fashion way, via [email](mailto:marko.kolarek@protonmail.com).
+
+Cheers,
+
+Marko
