@@ -8,7 +8,7 @@ Hi everyone and welcome (once again) to my personal web page. If you've been her
 
 Regarding the content, I plan to post mostly technical content related to coding (short tutorials, code snippets, etc.).
 
-Regarding the page setup, this is a completely vanilla [Github Pages](https://pages.github.com/) setup, without any tracking, comments, or dynamic content whatsoever. This is to keep the page as simple as possible while also protecting the reader's (i.e. your) privacy. If you would like to interact with me, you can either contact me on my [Linkedin](https://www.linkedin.com/in/kolarek) or the old fashion way, via [email](mailto:marko.kolarek@protonmail.com).
+Regarding the page itself, this is a completely vanilla [Github Pages](https://pages.github.com/) setup, without any tracking, comments, or dynamic content whatsoever. This is to keep the page as simple as possible while also protecting the reader's (i.e. your) privacy. If you would like to interact with me, you can either contact me on [Linkedin](https://www.linkedin.com/in/kolarek) or the old fashion way, via [email](mailto:marko.kolarek@protonmail.com).
 
 Cheers,
 
