@@ -38,7 +38,7 @@ permalink: /cv/
   Zalando SE  
   _Sep 2015 - Jun 2016_
   
-  Backend developer in the A/B testing and personalization team at Zalando SE. My main areas of work included monitoring (on system, application and business level) and implementing parts of services and stand-alone services. Tech stack includes Scala, Python, and various Amazon Web Services.
+  Backend engineer in the A/B testing and personalization team at Zalando SE. My main areas of work included monitoring (on system, application and business level) and implementing parts of services and stand-alone services. Tech stack includes Scala, Python, and various Amazon Web Services.
 
 - **Research Associate**  
   Visage Technologies AB
