@@ -42,13 +42,13 @@ permalink: /cv/
 
 - **Research Associate**  
   Visage Technologies AB
-  _Jul 2014 - Jun 2015_
+  _Jul 2014 - Jun 2015_  
   
   Research associate at Visage Technologies AB (Croatian branch). My main areas of work included research and development of the eye-gazing feature of the Visage SDK, doing end-to-end work from prototyping to production. Tech stack includes OpenCV, C/C++, and Python.
 
 - **Summer Intern**  
   divIT systems d.o.o.
-  _Jul 2013 - Aug 2013_
+  _Jul 2013 - Aug 2013_  
   
   Software developer intern at divIT systems. Development of a module for the mash.me interactive mo-cap project (face detection and facial feature detection). Development of QR code reader with basic augmented reality features. Tech stack includes OpenCV and Unity3D.
 
