@@ -12,13 +12,13 @@ permalink: /cv/
 
 - **Senior Data Engineer**  
   DAIN Studios GmbH  
-  _Mar 2019 - Oct 2020_  
+  _Mar 2019 - Oct 2020_
 
   Responsible for providing technical solutions to solve business issues through the use and support of (big) data. Leveraging machine learning and analytics use cases to build new data-driven products and services, from architecture development to implementation. Tech stack includes Amazon Web Services, Microsoft Azure, Apache Spark, Apache Kafka, Apache Hive, Python, and Scala.
 
 - **BE2 Cohort Member**  
   Entrepreneur First  
-  _Oct 2018 - Jan 2019_  
+  _Oct 2018 - Jan 2019_
   
   Selected for Europe's most prestigious accelerator - Entrepreneur First.
 
@@ -41,14 +41,14 @@ permalink: /cv/
   Backend engineer in the A/B testing and personalization team at Zalando SE. My main areas of work included monitoring (on system, application and business level) and implementing parts of services and stand-alone services. Tech stack includes Scala, Python, and various Amazon Web Services.
 
 - **Research Associate**  
-  Visage Technologies AB
-  _Jul 2014 - Jun 2015_  
+  Visage Technologies AB  
+  _Jul 2014 - Jun 2015_
   
   Research associate at Visage Technologies AB (Croatian branch). My main areas of work included research and development of the eye-gazing feature of the Visage SDK, doing end-to-end work from prototyping to production. Tech stack includes OpenCV, C/C++, and Python.
 
 - **Summer Intern**  
-  divIT systems d.o.o.
-  _Jul 2013 - Aug 2013_  
+  divIT systems d.o.o.  
+  _Jul 2013 - Aug 2013_
   
   Software developer intern at divIT systems. Development of a module for the mash.me interactive mo-cap project (face detection and facial feature detection). Development of QR code reader with basic augmented reality features. Tech stack includes OpenCV and Unity3D.
 
@@ -56,8 +56,8 @@ permalink: /cv/
 
 - **MSc in Information and Communication Technology, Information Processing**  
   Faculty of Electrical Engineering and Computing, University of Zagreb  
-  _Sep 2012 - Jun 2014_    
+  _Sep 2012 - Jun 2014_
   
 - **BSc in Electrical Engineering and Information Technology, Information Processing and Multimedia Systems**  
   Faculty of Electrical Engineering and Computing, University of Zagreb  
-  _Sep 2008 - Jun 2012_  
+  _Sep 2008 - Jun 2012_
