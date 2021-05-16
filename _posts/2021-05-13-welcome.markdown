@@ -11,5 +11,4 @@ Regarding the content, I plan to post mostly technical content related to coding
 Regarding the page itself, this is a completely vanilla [Github Pages](https://pages.github.com/) setup, without any tracking, comments, or dynamic content whatsoever. This is to keep the page as simple as possible while also protecting the reader's (i.e. your) privacy. If you would like to interact with me, you can either contact me on [Linkedin](https://www.linkedin.com/in/mkolarek) or the old fashion way, via [email](mailto:marko.kolarek@protonmail.com).
 
 Cheers,
-
 Marko
