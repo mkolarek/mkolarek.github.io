@@ -7,8 +7,8 @@ permalink: /cv/
 ### Experience
 
 - **Senior Data Engineer**  
-  GROPYUS  
-  _Nov 2020 - Present_
+  GROPYUS Technologies GmbH 
+  _Nov 2020 - present_
 
 - **Senior Data Engineer**  
   DAIN Studios GmbH  
