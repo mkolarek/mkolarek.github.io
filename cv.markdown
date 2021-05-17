@@ -7,7 +7,7 @@ permalink: /cv/
 ### Experience
 
 - **Senior Data Engineer**  
-  GROPYUS Technologies GmbH 
+  GROPYUS Technologies GmbH   
   _Nov 2020 - present_
 
 - **Senior Data Engineer**  
