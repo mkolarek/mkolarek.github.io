@@ -11,12 +11,11 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    justify-items: center;
     align-items: center;
 }
 
 main {
-    max-width: 40em;
+    max-width: 50em;
     flex: 1;
 }
 
