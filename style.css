@@ -1,0 +1,41 @@
+html {
+    overflow-y: scroll;
+    font-size: 1em;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 2em;
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+main {
+    max-width: 40em;
+    flex: 1;
+}
+
+details>summary {
+    line-height: 2rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+details>p.period {
+    font-style: italic;
+    color: gray;
+}
+
+details :not(summary, a, b, li) {
+    margin-left: 1.5em;
+}
+
+footer {
+    color: gray;
+    font-size: small;
+}
