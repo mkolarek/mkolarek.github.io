@@ -15,14 +15,14 @@ params:
     buttons:
       - name: Posts
         url: "/posts"
-      - name: Github
-        url: "https://github.com/"
+      - name: Projects
+        url: "/projects"
 
   socialIcons: # optional
-    - name: "<platform>"
-      url: "<link>"
-    - name: "<platform 2>"
-      url: "<link2>"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/mkolarek"
+    - name: "Github"
+      url: "https://github.com/mkolarek"
   env: production
   defaultTheme: auto
 
@@ -40,3 +40,7 @@ menu:
       name: posts
       url: /posts/
       weight: 30
+    - identifier: projects
+      name: projects
+      url: /projects/
+      weight: 40
