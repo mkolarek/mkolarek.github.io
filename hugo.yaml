@@ -2,3 +2,41 @@ baseURL: https://mkolarek.github.io/
 languageCode: en-us
 title: Marko Kolarek
 theme: ["PaperMod"]
+
+params:
+  profileMode:
+    enabled: true
+    title: "Marko Kolarek" # optional default will be site title
+    subtitle: "Data Engineer"
+    imageUrl: images/profile_image.png # optional
+    imageTitle: "Profile image" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: Posts
+        url: "/posts"
+      - name: Github
+        url: "https://github.com/"
+
+  socialIcons: # optional
+    - name: "<platform>"
+      url: "<link>"
+    - name: "<platform 2>"
+      url: "<link2>"
+  env: production
+  defaultTheme: auto
+
+menu:
+  main:
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 10
+    - identifier: impressum
+      name: impressum
+      url: /impressum/
+      weight: 20
+    - identifier: posts
+      name: posts
+      url: /posts/
+      weight: 30
