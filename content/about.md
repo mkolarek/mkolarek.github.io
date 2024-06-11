@@ -3,7 +3,7 @@ title = 'About'
 draft = false
 +++
 
-Hello! I'm a seasoned software engineer with a decade of experience under my belt, specializing in data engineering for the past nine years. Originally from Croatia, I've been based in Berlin, Germany for the last nine years, enjoying the vibrant tech scene here.
+Hi! My name is Marko and I'm a seasoned software engineer with a decade of experience under my belt, specializing in data engineering for the past nine years. Originally from Croatia, I've been based in Berlin, Germany for the last nine years, enjoying the vibrant tech scene here.
 
 I hold an MSc in Information Processing, with a focus on computer vision, which has equipped me with a deep understanding of data and its potential. Throughout my career, I’ve had the privilege of working across various industries, including e-commerce, property and real estate, legal, and consulting. This diverse experience has given me a broad perspective and the ability to adapt to different challenges and environments.
 
