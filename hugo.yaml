@@ -29,18 +29,18 @@ params:
 menu:
   main:
     - identifier: about
-      name: about
+      name: About
       url: /about/
       weight: 10
     - identifier: impressum
-      name: impressum
+      name: Impressum
       url: /impressum/
       weight: 20
     - identifier: posts
-      name: posts
+      name: Posts
       url: /posts/
       weight: 30
     - identifier: projects
-      name: projects
+      name: Projects
       url: /projects/
       weight: 40
