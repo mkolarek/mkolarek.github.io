@@ -3,15 +3,15 @@ title = 'About'
 draft = false
 +++
 
-Hi! My name is Marko and I'm a seasoned software engineer with a decade of experience under my belt, specializing in data engineering for the past nine years. Originally from Croatia, I've been based in Berlin, Germany for the last nine years, enjoying the vibrant tech scene here.
+Hi there! I'm a software engineer with ten years of experience, and for the last nine of those, I've been deep into data engineering. Originally from Croatia, I've been calling Berlin, Germany home for the past nine years.
 
-I hold an MSc in Information Processing, with a focus on computer vision, which has equipped me with a deep understanding of data and its potential. Throughout my career, I’ve had the privilege of working across various industries, including e-commerce, property and real estate, legal, and consulting. This diverse experience has given me a broad perspective and the ability to adapt to different challenges and environments.
+I have a Master's degree in Information Processing, focusing on computer vision, which has given me a solid background in all things data. Over the years, I've worked in e-commerce, property and real estate, legal, and consulting, picking up lots of diverse experiences along the way.
 
-For the last three years, I’ve been heavily involved in architecture and infrastructure topics, honing my skills in creating robust, scalable systems. I have extensive cloud platform experience in AWS and Azure, and my go-to programming language is Python, which I’ve become proficient in through countless projects and applications.
+Lately, I've been really into architecture and infrastructure, spending the last three years building strong, scalable systems. I’m pretty skilled with cloud platforms like AWS and Azure, and Python is my go-to language for most projects.
 
-On a personal note, I’m happily married and the proud owner of three delightful cats who keep life interesting.
+On the personal side, I'm married and share my home with three awesome cats who keep things lively.
 
-Thank you for taking the time to learn a bit about me. I look forward to connecting and exploring how we can collaborate on exciting projects.
+Thanks for stopping by to learn a bit about me. Looking forward to connecting and maybe working on something cool together!
 
 Best,  
 Marko
