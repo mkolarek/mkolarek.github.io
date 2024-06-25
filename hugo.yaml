@@ -7,7 +7,7 @@ params:
   profileMode:
     enabled: true
     title: "Marko Kolarek" # optional default will be site title
-    subtitle: "Data Engineer"
+    subtitle: "Data Engineer | Data Architect | Consultant"
     imageUrl: images/profile_image.png # optional
     imageTitle: "Profile image" # optional
     imageWidth: 120 # custom size
