@@ -3,20 +3,20 @@ title = 'Asking questions (pt. 1)'
 date = 2024-07-11T12:00:00+02:00
 +++
 
-I've always loved quizzes and trivia, and, when I was a kid, one of my favorite games was [MindMaze](https://www.kotaku.com.au/2020/07/encarta-mindmaze-94-95-the-kotaku-australia-review/). For those of you that aren't familiar, MindMaze was a trivia game that was published as a part of Microsoft's Encarta, a digital multimedia encyclopedia. Ever since Wikipedia launched though, encyclopedias like Encarta became less popular, since they were published in fixed, yearly iterations, were published on CDs, and, well, they cost money. The worst part about it though was that meant no more MindMaze!
+I've always loved quizzes and trivia, and, when I was a kid, one of my favorite games was [MindMaze](https://www.kotaku.com.au/2020/07/encarta-mindmaze-94-95-the-kotaku-australia-review/). For those of you who aren't familiar, MindMaze was a trivia game that was published as a part of Microsoft's Encarta, a digital multimedia encyclopedia. Ever since Wikipedia launched though, encyclopedias like Encarta became less popular, since they were published in fixed, yearly iterations, were published on CDs, and, well, they cost money. The worst part about it though was that meant no more MindMaze!
 
-So this got me thinking, why couldn't we have a Wikipedia-based MindMaze clone? The most important part of this project are of course, the questions.
+So this got me thinking, why couldn't we have a Wikipedia-based MindMaze clone? The most important part of this project are, of course, the questions.
 
 With the advent of LLMs, generating all kinds of text, including questions, has become easy and accessible. For this project, we will be leveraging LLMs but we will feed our own, curated data into them in order to try and diminish the effect of hallucinations.
 
 This is the rough plan:
 
 1. Fetch and prepare Wikipedia data (the focus of today's post)
-2. Prompt LLM for a question based on passed-in Wikipedia article
+2. Prompt LLM for a question based on a passed-in Wikipedia article
 
 While getting the contents of a Wikipedia article is easy, Wikipedia has politely asked its users to not scrape their pages (to avoid increased load, bot traffic, etc.). What they recommend is that users download [dumps](https://dumps.wikimedia.org/). These dumps are generated regularly and fit our use-case nicely, since we don't care that our data is super recent, and as an added benefit it allows us to completely decouple our system from Wikipedia.
 
-One small problem with the dump is, is that it is quite large. For example, `enwiki-20240601-pages-articles-multistream.xml.bz2` takes up around 22GB of disk space (and that's compressed!). And while we can say that that's expected (there's a lot of info on Wikipedia, after all), what does pose a problem is that this whole dump is _one file_. This definitely doesn't fit our use case well. We want to be be able to easily fetch a single article's content and include it in our prompt.
+One small problem with the dump is, is that it is quite large. For example, `enwiki-20240601-pages-articles-multistream.xml.bz2` takes up around 22GB of disk space (and that's compressed!). And while we can say that that's expected (there's a lot of information on Wikipedia, after all), what does pose a problem is that this whole dump is _one file_. This definitely doesn't fit our use case well. We want to be be able to easily fetch a single article's content and include it in our prompt.
 
 So, how do we tackle this? There are many different ways we can slice up one large XML file, but since this task sounds a lot like an ETL job, I decided to use Apache Spark. The benefit of using Spark is that there are multiple integrations already available and we don't need to worry too much about how to read and write our data, while the slicing up and cleaning can be easily done with the standard DataFrame API. Another (and usually important) benefit is that, if we have the hardware available, we can run our ETL job on a Spark cluster and process all of that data more quickly.
 
