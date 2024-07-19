@@ -1,6 +1,7 @@
 +++
 title = 'Personal Technology Radar'
 date = 2024-06-25T12:00:00+02:00
+tags = ['data visualization']
 +++
 
 One kind of data visualization that I particularly like is the [technology radar](https://www.thoughtworks.com/radar). If you're not familiar, it's an overview of the languages, frameworks, tools, etc. used at a company at the moment (like a snapshot). What's cool about it is, that it doesn't only show a black-and-white kind of picture, where, for example, it only shows the languages a company encourages or uses. 
