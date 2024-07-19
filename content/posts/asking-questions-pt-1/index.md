@@ -1,6 +1,6 @@
 +++
 title = 'Asking questions (pt. 1)'
-date = 2024-07-11T12:00:00+02:00
+date = 2024-07-19T08:00:00+02:00
 +++
 
 I've always loved quizzes and trivia, and, when I was a kid, one of my favorite games was [MindMaze](https://www.kotaku.com.au/2020/07/encarta-mindmaze-94-95-the-kotaku-australia-review/). For those of you who aren't familiar, MindMaze was a trivia game that was published as a part of Microsoft's Encarta, a digital multimedia encyclopedia. Ever since Wikipedia launched though, encyclopedias like Encarta became less popular, since they were published in fixed, yearly iterations, were published on CDs, and, well, they cost money. The worst part about it though was that meant no more MindMaze!
