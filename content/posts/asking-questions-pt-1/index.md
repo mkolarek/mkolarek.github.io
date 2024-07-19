@@ -1,7 +1,7 @@
 +++
 title = 'Asking questions (pt. 1)'
 date = 2024-07-19T08:00:00+02:00
-tags = ['data-engineering', 'trivia']
+tags = ['data engineering', 'trivia']
 # publishDate =
 # lastmod = 
 +++
