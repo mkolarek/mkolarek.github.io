@@ -25,6 +25,9 @@ params:
       url: "https://github.com/mkolarek"
   env: production
   defaultTheme: auto
+  ShowShareButtons: true
+  author: Marko Kolarek
+  ShowCodeCopyButtons: true
 
 menu:
   main:
