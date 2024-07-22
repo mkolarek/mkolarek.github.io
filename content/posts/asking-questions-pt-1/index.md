@@ -2,6 +2,12 @@
 title = 'Asking questions (pt. 1)'
 date = 2024-07-19T08:00:00+02:00
 tags = ['data engineering', 'trivia']
+ShowReadingTime = true
+# showtoc = true
+images = ['mindmaze.jpg']
+[cover]
+image = 'mindmaze.jpg'
+alt = "Mindmaze - Copyright Microsoft 1993"
 # publishDate =
 # lastmod = 
 +++
