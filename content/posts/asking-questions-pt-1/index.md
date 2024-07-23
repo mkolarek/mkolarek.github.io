@@ -3,6 +3,8 @@ title = 'Asking questions (pt. 1)'
 date = 2024-07-19T08:00:00+02:00
 tags = ['data engineering', 'trivia']
 ShowReadingTime = true
+images = ['cover.jpg']
+description = 'Exploring Wikipedia data for trivia question generation, using PySpark.'
 
 [cover]
 image = 'cover.jpg'
