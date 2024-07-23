@@ -28,6 +28,8 @@ params:
   ShowShareButtons: true
   author: Marko Kolarek
   ShowCodeCopyButtons: true
+  contact:
+    email: marko.kolarek@proton.me
 
 menu:
   main:
