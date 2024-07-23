@@ -6,8 +6,9 @@ ShowReadingTime = true
 description = 'Exploring Wikipedia data for trivia question generation, using PySpark.'
 
 [cover]
-image = 'cover.jpg'
+image = 'feature.jpg'
 alt = "Mindmaze - Copyright Microsoft 1993"
+caption = "Mindmaze - Copyright Microsoft 1993"
 
 # publishDate =
 # lastmod = 
