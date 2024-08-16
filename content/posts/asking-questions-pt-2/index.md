@@ -1,6 +1,6 @@
 +++
 title = 'Asking questions (pt. 2)'
-date = 2024-08-19T08:00:00+02:00
+date = 2024-08-16T10:00:00+02:00
 tags = ['data engineering', 'trivia', 'large language model']
 ShowReadingTime = true
 description = 'Generating trivia questions using an LLM, based on Wikipedia data.'
