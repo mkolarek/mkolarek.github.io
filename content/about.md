@@ -1,6 +1,6 @@
 +++
 title = 'About'
-draft = false
+hideMeta = true
 +++
 
 Hi there! I'm a software engineer with ten years of experience, and for the last nine of those, I've been deep into data engineering. Originally from Croatia, I've been calling Berlin, Germany home for the past nine years.

@@ -1,6 +1,6 @@
 +++
 title = 'Impressum'
-draft = false
+hideMeta = true
 +++
 
 ## Contact information
