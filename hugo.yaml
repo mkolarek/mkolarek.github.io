@@ -34,8 +34,8 @@ params:
 
 outputs:
   home:
-    HTML
-    RSS
+    - HTML
+    - RSS
 
 menu:
   main:
