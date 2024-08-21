@@ -8,13 +8,10 @@ Welcome to my professional portfolio! I am Marko Kolarek, a seasoned Data Engine
 
 ### What I Offer
 
-#### Data Engineering
 - **ETL Development:** Efficient Extract, Transform, Load processes to streamline your data pipelines.
 - **Data Warehousing:** Design and implementation of scalable, secure data warehouses.
 - **Big Data Solutions:** Expertise in Hadoop, Spark, and other big data technologies.
 - **Data Integration:** Seamless integration of diverse data sources into a unified system.
-
-#### Data Architecture
 - **Architecture Design:** Building robust, scalable data architecture tailored to your business needs.
 - **Cloud Solutions:** Migrating and managing data in cloud environments like AWS, Azure, or Google Cloud.
 - **Data Modeling:** Creating efficient, logical data models for structured and unstructured data.
