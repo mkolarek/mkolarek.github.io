@@ -4,7 +4,7 @@ hideMeta = true
 disableShare = true
 +++
 
-Welcome to my professional portfolio! I am Marko Kolarek, a seasoned Data Engineer & Data Architect with over 10 years of experience in designing, building, and optimizing data systems. My passion lies in helping businesses unlock the full potential of their data through tailored solutions that drive efficiency and innovation.
+Welcome to my professional portfolio! I am Marko Kolarek, a seasoned Data Engineer with over 10 years of experience in designing, building, and optimizing data systems. My passion lies in helping businesses unlock the full potential of their data through tailored solutions that drive efficiency and innovation.
 
 ### What I Offer
 
