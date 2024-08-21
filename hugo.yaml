@@ -1,6 +1,6 @@
 baseURL: https://mkolarek.github.io/
 languageCode: en-us
-title: "Marko Kolarek | Data Architecture & Engineering"
+title: "Data Architecture & Engineering"
 theme: ["PaperMod"]
 
 params:
