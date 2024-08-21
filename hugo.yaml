@@ -1,6 +1,6 @@
 baseURL: https://mkolarek.github.io/
 languageCode: en-us
-title: Marko Kolarek
+title: "Marko Kolarek | Data Architecture & Engineering"
 theme: ["PaperMod"]
 
 params:
@@ -8,22 +8,18 @@ params:
   profileMode:
     enabled: true
     title: "Marko Kolarek" # optional default will be site title
-    subtitle: "Data Engineer | Data Architect | Consultant"
+    subtitle: >
+      Ready to transform your data into actionable insights?  
+
+      Contact me today for a free consultation!  
     imageUrl: images/profile_image.png # optional
     imageTitle: "Profile image" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
     buttons:
-      - name: Posts
-        url: "/posts"
-      - name: Projects
-        url: "/projects"
+      - name: Contact Now!
+        url: "/contact"
 
-  socialIcons: # optional
-    - name: "LinkedIn"
-      url: "https://www.linkedin.com/in/mkolarek"
-    - name: "Github"
-      url: "https://github.com/mkolarek"
   env: production
   defaultTheme: auto
   ShowShareButtons: true
@@ -39,19 +35,23 @@ outputs:
 
 menu:
   main:
-    - identifier: about
-      name: About
-      url: /about/
+    - identifier: services
+      name: Services
+      url: /services/
       weight: 10
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 20
     - identifier: impressum
       name: Impressum
       url: /impressum/
-      weight: 20
+      weight: 50
     - identifier: posts
       name: Posts
       url: /posts/
-      weight: 30
-    - identifier: projects
-      name: Projects
-      url: /projects/
       weight: 40
+    - identifier: work
+      name: Work
+      url: /work/
+      weight: 30

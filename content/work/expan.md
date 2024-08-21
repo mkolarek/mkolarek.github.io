@@ -1,5 +1,7 @@
 +++
 title = 'Python library for statistical analysis of A/B tests'
+hideMeta = true
+disableShare = true
 +++
 
 ## ExpAn: Enhancing A/B Testing with Automation and Standardization
