@@ -21,6 +21,15 @@ params:
     imageTitle: "Data Engineer for Hire"
     imageWidth: 120
     imageHeight: 120
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/mkolarek"
+    - name: "linkedin"
+      url: "https://linkedin.com/in/mkolarek"
+    - name: "email"
+      url: "mailto:marko.kolarek@proton.me"
+    - name: "cv"
+      url: "pdf/Resume-Marko-Kolarek.pdf"
 
   env: production
   defaultTheme: auto
