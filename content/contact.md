@@ -8,6 +8,8 @@ I'd love to hear from you! Whether you have a question, need a consultation, or 
 
 {{< contact >}}
 
+***
+
 Or you can reach me directly at:
 
 **Email:** [marko.kolarek@proton.me](mailto:marko.kolarek@proton.me)  

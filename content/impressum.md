@@ -1,6 +1,7 @@
 +++
 title = 'Impressum'
 hideMeta = true
+disableShare = true
 +++
 
 ## Contact information

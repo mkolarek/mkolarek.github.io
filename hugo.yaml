@@ -7,18 +7,20 @@ params:
   ShowRssButtonInSectionTermList: true
   profileMode:
     enabled: true
-    title: "Marko Kolarek" # optional default will be site title
+    title: "Data Engineer for Hire" # optional default will be site title
     subtitle: >
       Ready to transform your data into actionable insights?  
 
-      Contact me today for a free consultation!  
-    imageUrl: images/profile_image.png # optional
-    imageTitle: "Profile image" # optional
-    imageWidth: 120 # custom size
-    imageHeight: 120 # custom size
+      Reach out today for a free consultation!  
     buttons:
+      - name: Services
+        url: "/services"
       - name: Contact Now!
         url: "/contact"
+    imageUrl: images/settings.svg
+    imageTitle: "Data Engineer for Hire"
+    imageWidth: 120
+    imageHeight: 120
 
   env: production
   defaultTheme: auto
@@ -27,6 +29,8 @@ params:
   ShowCodeCopyButtons: true
   contact:
     email: marko.kolarek@proton.me
+  assets:
+    favicon: images/settings.svg
 
 outputs:
   home:
