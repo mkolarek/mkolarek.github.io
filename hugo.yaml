@@ -39,7 +39,7 @@ params:
   contact:
     email: marko.kolarek@proton.me
   assets:
-    favicon: images/settings.svg
+    favicon: favicon.ico
 
 outputs:
   home:
