@@ -4,7 +4,6 @@ title: "Data Engineer for Hire"
 theme: ["PaperMod"]
 
 params:
-  ShowRssButtonInSectionTermList: true
   profileMode:
     enabled: true
     title: "Data Engineer for Hire" # optional default will be site title
@@ -33,13 +32,18 @@ params:
 
   env: production
   defaultTheme: auto
-  ShowShareButtons: true
   author: Marko Kolarek
+  ShowShareButtons: true
+  ShowRssButtonInSectionTermList: true
   ShowCodeCopyButtons: true
   contact:
     email: marko.kolarek@proton.me
   assets:
-    favicon: /favicon.ico
+    favicon: images/settings.svg
+    favicon16x16: images/settings.svg
+    favicon32x32: images/settings.svg
+    apple_touch_icon: images/settings.svg
+    safari_pinned_tab: images/settings.svg
 
 outputs:
   home:
