@@ -16,6 +16,8 @@ params:
         url: "/services"
       - name: Contact Now!
         url: "/contact"
+      - name: Book Meeting
+        url: "https://calendly.com/marko-kolarek/30min"
     imageUrl: images/settings.svg
     imageTitle: "Data Engineer for Hire"
     imageWidth: 120
