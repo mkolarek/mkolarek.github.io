@@ -10,8 +10,6 @@ I specialize in delivering tailored data platform solutions that empower busines
 
 ## 💡 Data Strategy and Architecture Consulting
 
-![](images/platform.svg)
-
 **Build the Foundation for Scalable Success**  
 
 I help organizations design robust data strategies that align with business goals. From assessing your current systems to building a comprehensive roadmap, I ensure your data architecture is future-proof, scalable, and adaptable to evolving technologies.
