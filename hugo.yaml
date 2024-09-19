@@ -1,25 +1,25 @@
 baseURL: https://mkolarek.github.io/
 languageCode: en-us
-title: "Data Engineer for Hire"
+title: "mkolarek.github.io"
 theme: ["PaperMod"]
+
+enableRobotsTXT: true
+enableEmoji: true
 
 params:
   profileMode:
     enabled: true
-    title: "Data Engineer for Hire" # optional default will be site title
-    subtitle: >
-      Ready to transform your data into actionable insights?  
-
-      Reach out today for a free consultation!  
+    title: > 
+      Marko Kolarek  
+    subtitle: > 
+      📐 I build data platforms, cost-effective and tailored to your business.
     buttons:
       - name: Services
         url: "/services"
-      - name: Contact Now!
+      - name: Contact
         url: "/contact"
-      - name: Book Meeting
-        url: "https://calendly.com/marko-kolarek/30min"
-    imageUrl: images/settings.svg
-    imageTitle: "Data Engineer for Hire"
+    imageUrl: images/profile_photo.png
+    imageTitle: "The Data Platformist"
     imageWidth: 120
     imageHeight: 120
   socialIcons:
@@ -29,11 +29,10 @@ params:
       url: "https://linkedin.com/in/mkolarek"
     - name: "email"
       url: "mailto:marko.kolarek@proton.me"
-    - name: "cv"
-      url: "pdf/Resume-Marko-Kolarek.pdf"
 
   env: production
-  defaultTheme: auto
+  defaultTheme: light
+  disableThemeToggle: true
   author: Marko Kolarek
   ShowShareButtons: true
   ShowRssButtonInSectionTermList: true
@@ -41,11 +40,13 @@ params:
   contact:
     email: marko.kolarek@proton.me
   assets:
-    favicon: images/settings.svg
-    favicon16x16: images/settings.svg
-    favicon32x32: images/settings.svg
-    apple_touch_icon: images/settings.svg
-    safari_pinned_tab: images/settings.svg
+    favicon: images/platform.svg
+    favicon16x16: images/platform.svg
+    favicon32x32: images/platform.svg
+    apple_touch_icon: images/platform.svg
+    safari_pinned_tab: images/platform.svg
+  footer:
+    text: "[Impressum](/impressum)"
 
 outputs:
   home:
@@ -58,19 +59,20 @@ menu:
       name: Services
       url: /services/
       weight: 10
+    # - identifier: projects
+    #   name: Projects
+    #   url: /projects/
+    #   weight: 20
     - identifier: contact
       name: Contact
       url: /contact/
-      weight: 20
-    - identifier: impressum
-      name: Impressum
-      url: /impressum/
-      weight: 50
+      weight: 30
     - identifier: posts
-      name: Posts
+      name: Blog
       url: /posts/
       weight: 40
-    - identifier: work
-      name: Work
-      url: /work/
-      weight: 30
+    - identifier: book_meeting
+      name: "Free consultation"
+      url: "https://calendly.com/marko-kolarek/30min"
+      weight: 50
+

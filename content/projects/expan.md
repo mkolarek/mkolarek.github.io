@@ -3,6 +3,7 @@ title = 'ExpAn: Enhancing A/B Testing with Automation and Standardization'
 hideMeta = true
 disableShare = true
 description = 'Python library for statistical analysis of A/B tests.'
+draft = true
 +++
 
 

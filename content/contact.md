@@ -10,7 +10,7 @@ I'd love to hear from you! Whether you have a question, need a consultation, or 
 
 ***
 
-Or you can reach me directly at:
+Or you can reach out directly at:
 
 **Email:** [marko.kolarek@proton.me](mailto:marko.kolarek@proton.me)  
 **Phone:** +49 162 518 2782  
