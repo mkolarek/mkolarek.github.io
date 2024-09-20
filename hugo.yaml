@@ -41,12 +41,12 @@ params:
   ShowCodeCopyButtons: true
   contact:
     email: marko.kolarek@proton.me
-  # assets:
-  #   favicon: images/platform.svg
-  #   favicon16x16: images/platform.svg
-  #   favicon32x32: images/platform.svg
-  #   apple_touch_icon: images/platform.svg
-  #   safari_pinned_tab: images/platform.svg
+  assets:
+    favicon: images/favicon/favicon.ico
+    favicon16x16: images/favicon/favicon-16x16.png
+    favicon32x32: images/favicon/favicon-32x32.png
+    apple_touch_icon: images/favicon/apple-touch-icon.png
+    safari_pinned_tab: images/favicon/favicon-32x32.png
   footer:
     text: "[Impressum](/impressum)"
 
