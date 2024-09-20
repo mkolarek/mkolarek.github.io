@@ -9,12 +9,9 @@ enableEmoji: true
 params:
   profileMode:
     enabled: true
-    title: > 
-      Marko Kolarek  
+    title: Build better data solutions, faster 
     subtitle: > 
-      _Data Consultant_  
-        
-      📐 I build data platforms, cost-effective and tailored to your business.
+      I help businesses grow by leveraging data platforms for real-time analytics and insights.
     buttons:
       - name: Services
         url: "/services"
