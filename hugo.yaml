@@ -1,6 +1,6 @@
 baseURL: https://mkolarek.github.io/
 languageCode: en-us
-title: "Marko Kolarek - Data Consultant"
+title: "Marko Kolarek - Data Consulting"
 theme: ["PaperMod"]
 
 enableRobotsTXT: true
@@ -44,8 +44,8 @@ params:
     favicon32x32: favicon/favicon-32x32.png
     apple_touch_icon: favicon/apple-touch-icon.png
     safari_pinned_tab: favicon/favicon-32x32.png
-  label:
-    text: "Marko Kolarek"
+  # label:
+  #   text: "Marko Kolarek"
   footer:
     text: "[Impressum](/impressum)"
 
