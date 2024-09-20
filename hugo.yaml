@@ -12,6 +12,8 @@ params:
     title: > 
       Marko Kolarek  
     subtitle: > 
+      _Data Consultant_  
+        
       📐 I build data platforms, cost-effective and tailored to your business.
     buttons:
       - name: Services
@@ -19,7 +21,7 @@ params:
       - name: Contact
         url: "/contact"
     imageUrl: images/profile_photo.png
-    imageTitle: "The Data Platformist"
+    imageTitle: "Marko Kolarek"
     imageWidth: 120
     imageHeight: 120
   socialIcons:
