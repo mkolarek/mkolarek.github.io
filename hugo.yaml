@@ -29,7 +29,7 @@ params:
     - name: "linkedin"
       url: "https://linkedin.com/in/mkolarek"
     - name: "email"
-      url: "mailto:marko.kolarek@proton.me"
+      url: "mailto:hello@markokolarek.com"
 
   env: production
   defaultTheme: light
@@ -39,7 +39,7 @@ params:
   ShowRssButtonInSectionTermList: true
   ShowCodeCopyButtons: true
   contact:
-    email: hello@markokolarek.com
+    email: admin@markokolarek.com
   assets:
     favicon: favicon/export_logo_32x32.png
     favicon16x16: favicon/export_logo_16x16.png
