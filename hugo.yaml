@@ -2,6 +2,7 @@ baseURL: https://mkolarek.github.io/
 languageCode: en-us
 title: "Marko Kolarek - Data Consulting"
 theme: ["PaperMod"]
+description: 
 
 enableRobotsTXT: true
 enableEmoji: true
@@ -60,9 +61,13 @@ menu:
       name: Services
       url: /services/
       weight: 10
-    # - identifier: projects
-    #   name: Projects
-    #   url: /projects/
+    - identifier: testimonials
+      name: Testimonials
+      url: /testimonials/
+      weight: 20
+    # - identifier: solutions
+    #   name: Solutions
+    #   url: /solutions/
     #   weight: 20
     - identifier: contact
       name: Contact
