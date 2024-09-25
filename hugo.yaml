@@ -1,6 +1,6 @@
 baseURL: https://markokolarek.com/
 languageCode: en-us
-title: "Marko Kolarek - Data Consulting"
+title: "Marko Kolarek"
 theme: ["PaperMod"]
 description: Building better data solutions, faster
 images: favicon/apple-touch-icon.png
@@ -19,10 +19,10 @@ params:
         url: "/services"
       - name: Contact
         url: "/contact"
-    imageUrl: images/profile_photo.png
+    imageUrl: favicon/export_logo_512x512.png
     imageTitle: "Marko Kolarek"
-    imageWidth: 120
-    imageHeight: 120
+    imageWidth: 256
+    imageHeight: 256
   socialIcons:
     - name: "github"
       url: "https://github.com/mkolarek"
@@ -39,13 +39,13 @@ params:
   ShowRssButtonInSectionTermList: true
   ShowCodeCopyButtons: true
   contact:
-    email: marko.kolarek@proton.me
+    email: hello@markokolarek.com
   assets:
-    favicon: favicon/favicon-32x32.ico
-    favicon16x16: favicon/favicon-16x16.png
-    favicon32x32: favicon/favicon-32x32.png
-    apple_touch_icon: favicon/apple-touch-icon.png
-    safari_pinned_tab: favicon/favicon-32x32.png
+    favicon: favicon/export_logo_32x32.png
+    favicon16x16: favicon/export_logo_16x16.png
+    favicon32x32: favicon/export_logo_32x32.png
+    apple_touch_icon: favicon/export_logo_512x512.png
+    safari_pinned_tab: favicon/export_logo_32x32.png
   # label:
   #   text: "Marko Kolarek"
   footer:
