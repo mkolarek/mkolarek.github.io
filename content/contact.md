@@ -4,15 +4,16 @@ hideMeta = true
 disableShare = true
 +++
 
-I'd love to hear from you! Whether you have a question, need a consultation, or are ready to start a project, feel free to reach out.
+Ready to unlock the full potential of your data? I'm here to help!
 
-{{< contact >}}
+Whether you have questions about our services or are ready to get started, I’d love to hear from you. Reach out today to schedule an initial discovery call, and let’s discuss how we can build a data platform tailored to your business needs.
 
-***
 
-Or you can reach out directly at:
+### Get in Touch
 
-**Email:** [hello@markokolarek.com](mailto:hello@markokolarek.com)  
-**Phone:** +49 162 518 2782  
-**LinkedIn:** [linkedin.com/in/mkolarek](https://linkedin.com/in/mkolarek)  
+📧 Email: hello@markokolarek.com  
+📞 Phone: +49 162 518 2782  
 
+Or, use the form below to book a discovery call.
+
+{{< calendly >}}

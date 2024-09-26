@@ -78,8 +78,4 @@ menu:
       name: Blog
       url: /posts/
       weight: 40
-    - identifier: book_meeting
-      name: "Free consultation"
-      url: "https://calendly.com/marko-kolarek/30min"
-      weight: 50
 
