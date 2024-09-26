@@ -14,6 +14,6 @@ Whether you have questions about my services or are ready to get started, I’d 
 📧 Email: hello@markokolarek.com  
 📞 Phone: +49 162 518 2782  
 
-Or, use the form below to book a discovery call.
+Or, use the form below to book a discovery call, free of charge.
 
 {{< calendly >}}
