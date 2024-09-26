@@ -6,7 +6,7 @@ disableShare = true
 
 Ready to unlock the full potential of your data? I'm here to help!
 
-Whether you have questions about our services or are ready to get started, I’d love to hear from you. Reach out today to schedule an initial discovery call, and let’s discuss how we can build a data platform tailored to your business needs.
+Whether you have questions about my services or are ready to get started, I’d love to hear from you. Reach out today to schedule an initial discovery call, and let’s discuss how we can build a data platform tailored to your business needs.
 
 
 ### Get in Touch
