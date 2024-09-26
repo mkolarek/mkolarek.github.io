@@ -24,13 +24,10 @@ params:
     imageWidth: 256
     imageHeight: 256
   socialIcons:
-    - name: "github"
-      url: "https://github.com/mkolarek"
     - name: "linkedin"
       url: "https://linkedin.com/in/mkolarek"
-    - name: "email"
-      url: "mailto:hello@markokolarek.com"
-
+    - name: "github"
+      url: "https://github.com/mkolarek"
   env: production
   defaultTheme: light
   disableThemeToggle: true
