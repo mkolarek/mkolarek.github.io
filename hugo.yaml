@@ -29,8 +29,6 @@ params:
     - name: "github"
       url: "https://github.com/mkolarek"
   env: production
-  defaultTheme: light
-  disableThemeToggle: true
   author: Marko Kolarek
   ShowShareButtons: true
   ShowRssButtonInSectionTermList: true
