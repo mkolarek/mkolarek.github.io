@@ -8,6 +8,14 @@
   --hover-color: #dbeafe;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: var(--text-color);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -17,6 +25,19 @@ body {
   background-color: var(--background);
   font-size: 16px;
   overflow-x: hidden;
+  width: 100%;
+}
+
+/* Prevent horizontal scrolling on all elements */
+* {
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Exception for elements that need to maintain their dimensions */
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -199,6 +220,14 @@ nav a.active:after {
     z-index: 20;
   }
   
+  .container {
+    padding: 0 1rem;
+  }
+  
+  header .container {
+    padding: 0 1rem;
+  }
+  
   nav {
     position: fixed;
     top: 0;
@@ -211,6 +240,7 @@ nav a.active:after {
     z-index: 15;
     transition: right 0.3s ease;
     padding: 5rem 1rem 1rem;
+    overflow-y: auto;
   }
   
   nav.active {
@@ -231,6 +261,7 @@ nav a.active:after {
     display: block;
     padding: 0.75rem 0;
     font-size: 1.1rem;
+    word-wrap: break-word;
   }
   
   .menu-overlay {
@@ -304,6 +335,9 @@ nav a.active:after {
 
 .content p {
   margin-bottom: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .content pre {
@@ -313,6 +347,7 @@ nav a.active:after {
   overflow-x: auto;
   margin: 1.5rem 0;
   border: 1px solid var(--border-color);
+  max-width: 100%;
 }
 
 .content img {
@@ -320,6 +355,12 @@ nav a.active:after {
   height: auto;
   border-radius: 6px;
   margin: 1.5rem 0;
+}
+
+/* Handle long URLs and text */
+.content a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .recent-posts {
@@ -451,60 +492,9 @@ code {
     font-size: 2rem;
   }
   
-  .container {
-    padding: 0 1rem;
-  }
-  
-  header .container {
-    padding: 0 1rem;
-  }
-  
   .posts-list article {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0;
   }
-}
-
-/* Responsive images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1.5rem 0;
-}
-
-/* Responsive tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  overflow-x: auto;
-  display: block;
-}
-
-@media (min-width: 768px) {
-  table {
-    display: table;
-  }
-}
-
-th, td {
-  padding: 0.75rem;
-  text-align: left;
-  border: 1px solid var(--border-color);
-}
-
-th {
-  background-color: var(--light-bg);
-}
-
-/* Responsive code blocks */
-pre {
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 1rem;
-  background-color: var(--light-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
 }
 
 @media (max-width: 480px) {
@@ -534,11 +524,102 @@ pre {
     padding: 0 0.75rem;
   }
   
+  header .container {
+    padding: 0 0.75rem;
+  }
+  
   h2 {
     font-size: 1.4rem;
   }
   
   h3 {
     font-size: 1.2rem;
+  }
+  
+  .recent-posts h2,
+  .posts-list h2 {
+    font-size: 1.5rem;
+  }
+  
+  .recent-posts article h3,
+  .posts-list article h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+/* Responsive tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 0.8rem;
+  }
+  
+  /* Create horizontal scroll for tables on mobile */
+  .table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  
+  table {
+    min-width: 500px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  table {
+    display: table;
+  }
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid var(--border-color);
+}
+
+th {
+  background-color: var(--light-bg);
+}
+
+/* Responsive code blocks */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* Responsive code blocks */
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  pre {
+    padding: 0.75rem;
+    font-size: 0.8rem;
   }
 }
