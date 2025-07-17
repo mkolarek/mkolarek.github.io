@@ -1,0 +1,32 @@
+baseURL = 'https://markokolarek.com/'
+languageCode = 'en-us'
+title = 'Marko Kolarek'
+theme = 'blog-theme'
+
+[Params]
+resume = 'pdf/2025-07-17-Resume-Marko-Kolarek.pdf'
+email = 'marko@markokolarek.com'
+linkedin = 'mkolarek'
+github = 'mkolarek'
+
+
+
+[menu]  
+
+  # [[menu.main]]
+  #   identifier = "home"
+  #   name = "Home"
+  #   url = "/"
+  #   weight = 10
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Blog"
+    url = "/posts/"
+    weight = 10
+
+  # [[menu.main]]
+  #   identifier = "about"
+  #   name = "About"
+  #   url = "/about/"
+  #   weight = 30
