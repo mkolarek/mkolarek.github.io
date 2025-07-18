@@ -4,19 +4,19 @@ date = 2024-06-25T12:00:00+02:00
 tags = ['Data Visualization']
 +++
 
-One kind of data visualization that I particularly like is the [technology radar](https://www.thoughtworks.com/radar). If you're not familiar, it's an overview of the languages, frameworks, tools, etc. used at a company at the moment (like a snapshot). What's cool about it is, that it doesn't only show a black-and-white kind of picture, where, for example, it only shows the languages a company encourages or uses. 
+One type of data visualization I particularly enjoy is the [technology radar](https://www.thoughtworks.com/radar). If you're unfamiliar, it provides an overview of the languages, frameworks, tools, and other technologies currently in use at a company—a snapshot in time. What makes it fascinating is that it doesn't present a simple black-and-white picture, such as merely listing the languages a company endorses or uses.
 
-Rather, what's shown is a plot that's sectioned into areas such as "Adopt", "Trial", "Assess", and "Hold". Each of these areas indicates what the level of adoption of a language at the company is:
-- Adopt: well-established, used in production
-- Trial: ready to be used, not completely proven as Adopt
-- Assess: looks interesting, but not ready for trial yet 
-- Hold: we don't like these, keep away
+Instead, it features a plot divided into areas labeled "Adopt," "Trial," "Assess," and "Hold." Each area represents the level of adoption for a given technology within the company:
+- **Adopt**: Well-established and used in production.
+- **Trial**: Ready for use but not yet proven to the level of "Adopt."
+- **Assess**: Appears promising but isn't ready for trial yet.
+- **Hold**: Technologies to avoid—steer clear.
 
-This got me thinking, why stop at the company level? Wouldn't it be cool to showcase what my personal experience level/opinion is in a similar way?  Therefore I present to you, the [Personal Technology Radar](https://github.com/mkolarek/notebooks/blob/main/radar/radar.ipynb)!  
+This concept got me thinking: why limit it to the company level? Wouldn't it be great to showcase my personal experience and opinions in a similar format? Hence, I present to you the [Personal Technology Radar](https://github.com/mkolarek/notebooks/blob/main/radar/radar.ipynb)!
 
 ![Image](radar.png)
 
-By using this Jupyter Python notebook you can easily generate your own, just check out the `resources/skills.ods` and fill it with your own loved/hated tech. And if you decide to share, give me a ping!
+Using this Jupyter Python notebook, you can easily create your own radar. Simply check out the `resources/skills.ods` file and populate it with your favorite and least favorite technologies. If you decide to share your radar, feel free to give me a shout!
 
 Cheers,  
 Marko

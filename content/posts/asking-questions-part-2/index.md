@@ -2,37 +2,25 @@
 title = 'Asking questions (pt. 2)'
 date = 2024-08-16T10:00:00+02:00
 tags = ['Data Engineering', 'Trivia', 'Large Language Model']
-ShowReadingTime = true
-description = 'Generating trivia questions using an LLM, based on Wikipedia data.'
-
-[cover]
-image = 'mindmaze.png'
-alt = "Mindmaze - Copyright Microsoft 1993"
-caption = "Mindmaze - Copyright Microsoft 1993"
-relative = true
-
-# publishDate = 
-# lastmod = 
-# showtoc = 
 +++
 
-Last time, we talked about preparing the data for our question generating system. To recall, this was the rough plan:
+Last time, we discussed how to prepare the data for our question-generating system. To recap, here was the rough plan:
 
 1. Fetch and prepare Wikipedia data (see more [here](https://mkolarek.github.io/posts/asking-questions-pt-1/))
-2. Prompt an LLM for a question based on passed-in Wikipedia article (the focus of today's post)
+2. Use an LLM to generate questions based on a given Wikipedia article (the focus of today's post)
 
-There's a wide range of different LLM services available online, but for our purposes we're going to use something that's open-source and that we can run locally on our machine - [ollama](https://ollama.com). This is a tool that acts as a wrapper around popular, freely available models by providing a uniform API and CLI, and it downloads and manages the models for us.
+There are numerous LLM services available online, but for our purposes, we'll use an open-source solution that can be run locally on our machine: [ollama](https://ollama.com). This tool acts as a wrapper around popular, freely available models, providing a uniform API and CLI while managing model downloads for us.
 
-Our plan for using the LLM is:
+Our approach to using the LLM involves:
 
-1. Deploy a model locally (e.g. `llama3`)
-2. Query our database for a random Wikipedia article
-3. Pass in contents of Wikipedia article as part of a prompt to our model
-4. Receive multiple-choice question based on article
+1. Deploying a model locally (e.g., `llama3`)
+2. Querying our database for a random Wikipedia article
+3. Passing the contents of the Wikipedia article as part of a prompt to the model
+4. Receiving a multiple-choice question based on the article
 
 ## Deploying a model using ollama
 
-To keep our setup as clean and reproducible as possible, we're going to use the official Docker image of `ollama`. 
+To ensure a clean and reproducible setup, we'll use the official Docker image of `ollama`.
 
 Running the container:
 
@@ -40,15 +28,15 @@ Running the container:
 docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
 
-And then accessing the prompt interface:
+Accessing the prompt interface:
 
 ```
 docker exec -it ollama ollama run llama3
 ```
 
-(This may take longer when you run it for the first time since the model file needs to be downloaded and it can be quite large.)
+(Note: The first run may take longer as the model file needs to be downloaded, which can be quite large.)
 
-Here we can try out a few prompts, to confirm that everything works as expected. If you have a compatible GPU, the inference of the model should be quicker.
+Here, we can test a few prompts to ensure everything works as expected. If you have a compatible GPU, model inference should be faster.
 
 ```
 >>> Why is the sky blue? Answer briefly, please.
@@ -57,7 +45,7 @@ more efficiently by tiny molecules in the atmosphere than longer wavelengths (li
 orange).
 ```
 
-Let's also try out the API:
+Let's also test the API:
 
 ```bash
 $ curl http://localhost:11434/api/generate -d '{
@@ -159,27 +147,26 @@ $ curl http://localhost:11434/api/generate -d '{
 }
 ```
 
-We've sent out a request via `curl`, containing the same prompt. What we've done a bit differently though, is that we've requested a non-streaming response (by setting `stream` as false), so that we get our whole response at once.
-
+Here, we've sent a request via `curl` containing the same prompt. However, we've requested a non-streaming response (by setting `stream` to false), so we receive the entire response at once.
 
 ## Getting a random Wikipedia article from our database
 
-The simplest approach we can take here is to pick a random number (X) between 1 and N, where N is equal to the number of Wikipedia articles in our database, and then to query the contents of the X-th article.
+The simplest approach is to pick a random number (X) between 1 and N, where N is the total number of Wikipedia articles in our database, and then query the contents of the X-th article.
 
-Before we can do that though, we need to assign each article an incremental ID. Although we already have an ID that came from our original dataset, this ID unfortunately isn't sequential, and we've already filtered out some articles (and their IDs) when we removed redirects.
+Before doing this, we need to assign each article an incremental ID. Although our original dataset includes an ID, it isn't sequential, and some articles (and their IDs) were removed during filtering.
 
-Let's launch our `psql` interface and run:
+To address this, launch the `psql` interface and run:
 
 ```SQL
 wiki=>ALTER TABLE wiki.wiki ADD row_id SERIAL;
 ALTER
 ```
 
-(This will take a while.)
+(This process may take some time.)
 
-We have now added a new column `row_id` to our `wiki` table that is of (pseudo-)type `SERIAL`, meaning it's auto-incrementing.
+We have now added a new column `row_id` to our `wiki` table, which is of the (pseudo-)type `SERIAL`, meaning it auto-increments.
 
-Let's try to query a random article's title:
+To query a random article's title:
 
 ```SQL
 wiki=>SELECT title 
@@ -194,11 +181,11 @@ WHERE row_id = (
 (1 row)
 ```
 
-By running this a few times we can confirm that we get different random articles. Although, something seems to be a bit off... There are some article titles starting with the prefix `Category:`. Having taken a closer look into these, it seems that they aren't "true" articles, but rather meta-articles. They don't contain direct information about a topic, but instead they contain information about other articles. This isn't useful for our use-case, so we should think about removing these from our database. 
+Running this query multiple times confirms that we get different random articles. However, some article titles start with the prefix `Category:`, which are meta-articles rather than "true" articles. These aren't useful for our use case, so we should remove them from our database.
 
 ### Some ad-hoc data cleaning
 
-Let's see if there are any other similar meta-articles:
+Let's check for other similar meta-articles:
 
 ```SQL
 SELECT DISTINCT(SUBSTRING(title from '.*\:[^ ]')) 
@@ -206,9 +193,9 @@ FROM wiki.wiki
 WHERE title LIKE '%:%';
 ```
 
-What we're doing here is, we are looking for all article title starting with a string, followed immediately by a colon and then a string again, e.g. `Category:Women of Belgium by activity`. From there we want to extract the part until the first colon, e.g. `Category:`.
+This query looks for article titles starting with a string followed by a colon and another string, e.g., `Category:Women of Belgium by activity`. It extracts the part before the colon, e.g., `Category:`.
 
-Looking at the results, we see a lot of valid article titles, but also some that seem meta:
+The results show valid article titles as well as meta-articles:
 
 ```
 Wikipedia:
@@ -219,7 +206,7 @@ Portal:
 File:
 ```
 
-Let's clean all of these up:
+To clean these up:
 
 ```SQL
 wiki=>DELETE FROM wiki.wiki 
@@ -231,23 +218,21 @@ WHERE title LIKE 'Wikipedia:%'
     OR title LIKE 'File:%';
 ```
 
-The bad news is, we've now broken our `row_id`, since we have gaps in the ID sequence (although it's `SERIAL`, the auto-incrementing only works on newly added rows, not on already existing ones).
-
-First we need to drop the column:
+Unfortunately, this breaks our `row_id` sequence due to gaps in the IDs. To fix this:
 
 ```SQL
 wiki=>ALTER TABLE wiki.wiki DROP COLUMN row_id;
 ALTER
 ```
 
-And then re-create the `row_id`:
+Recreate the `row_id`:
 
 ```SQL
 wiki=>ALTER TABLE wiki.wiki ADD row_id SERIAL;
 ALTER
 ```
 
-Let's also have a look at how we can add this filtering to our ETL job from our previous post:
+To add this filtering to our ETL job from the previous post:
 
 ```python
 ...
@@ -266,13 +251,13 @@ Let's also have a look at how we can add this filtering to our ETL job from our 
 
 ***
 
-Great! Now that we have all of our components ready, let's put them together.
+Great! Now that we have all the components ready, let's put them together.
 
 ## Question generator API
 
-While we could just write a script that does the necessary steps for us and provides us with a new question every time we run it, I decided to build a small API service instead. This way it can become a component of a larger system (i.e. a game like MindMaze), while also being easily accessible via a web browser. To keep things simple, I've decided to use `flask`, since it has built-in support both for providing API endpoints and for HTML templating (if we want a nicer UI).
+Instead of writing a script to generate a new question each time it's run, I decided to build a small API service. This allows it to become a component of a larger system (e.g., a game like MindMaze) while being easily accessible via a web browser. To keep things simple, we'll use `flask`, which supports both API endpoints and HTML templating (for a nicer UI).
 
-Let's go through the whole web app piece by piece. Aside from the imports, what's interesting here is that we've prepared an example question response that we'd like our LLM to return for us (we'll be using it later). Some very basic (and insecure!) secrets and connection strings are also initialised here.
+Let's go through the web app piece by piece. Aside from the imports, the interesting part is the example question response we'd like our LLM to return. Basic (and insecure!) secrets and connection strings are also initialized here.
 
 ```python
 from flask import Flask, render_template, request, redirect, url_for
@@ -301,7 +286,7 @@ EXAMPLE_QUESTION = {
 }
 ```
 
-While we have previously done all our of querying in one SQL query (both the number of articles and fetching a single random article), here we've broken that into two steps, since we only need to fetch the number of articles once.
+Previously, we combined the number of articles and fetching a single random article into one SQL query. Here, we've split it into two steps since the number of articles only needs to be fetched once.
 
 ```python
 app.logger.info("Getting number of articles...")
@@ -317,7 +302,7 @@ toc = time.perf_counter()
 app.logger.info("Number of articles fetched in %0.4f seconds.", toc - tic)
 ```
 
-Fetching a random article and its title is pretty straightforward.
+Fetching a random article and its title is straightforward.
 
 ```python
 def get_random_article():
@@ -326,21 +311,19 @@ def get_random_article():
     with psycopg.connect(DB_CONN_STRING) as conn:
         with conn.cursor() as cur:
             cur.execute(
-                """SELECT title, \"revision_text__VALUE\"
-                FROM wiki.wiki 
-                WHERE row_id = {};""".format(row_id)
+                """SELECT title, \"revision_text__VALUE\"\n                FROM wiki.wiki \n                WHERE row_id = {};""".format(row_id)
             )
             for record in cur:
                 app.logger.info("Article title and row_id: %s, %s", record[0], row_id)
                 return record
 ```
 
-Generating the question itself is also straightforward, with the prompt being the most interesting part. The most important parts of the prompt are:
+Generating the question is also straightforward, with the prompt being the most interesting part. Key aspects of the prompt include:
 
-- limiting the question generation **only** on the provided article content
-- responding in JSON format, following the provided example
+- Limiting question generation **only** to the provided article content
+- Responding in JSON format, following the provided example
 
-We've added some string cleaning of the prompt just in case, since the LLM would sometimes include additional text regardless of our prompt, e.g. "Here's the JSON response: ". 
+We've added string cleaning to the prompt to handle cases where the LLM includes additional text, e.g., "Here's the JSON response: ".
 
 ```python
 def generate_question(article_content):
@@ -371,9 +354,7 @@ def generate_question(article_content):
     return question
 ```
 
-Here's our main endpoint, where it all comes together. When we make a `GET` request to the endpoint, we trigger the random article fetch and question generation. We also extend the JSON response by adding the article title and the article Wikipedia link.
-
-When we make a `POST` request to the endpoint (i.e. when we submit our answer), we check whether the answer was correct and forward the answer/correct answer pair to the result page.
+Here's the main endpoint where everything comes together. A `GET` request triggers the random article fetch and question generation. The JSON response is extended with the article title and Wikipedia link. A `POST` request checks whether the answer is correct and forwards the answer/correct answer pair to the result page.
 
 ```python
 @app.route("/question", methods=["GET", "POST"])
@@ -456,7 +437,7 @@ And here's the accompanying template:
 </html>
 ```
 
-Finally, here's our result page rendering endpoint and its template.
+Finally, here's the result page rendering endpoint and its template.
 
 ```python
 @app.route("/question/result", methods=["GET"])

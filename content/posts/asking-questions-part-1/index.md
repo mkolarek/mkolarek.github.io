@@ -2,78 +2,64 @@
 title = 'Asking questions (pt. 1)'
 date = 2024-07-19T08:00:00+02:00
 tags = ['Data Engineering', 'Trivia']
-ShowReadingTime = true
-description = 'Exploring Wikipedia data for trivia question generation, using PySpark.'
-
-[cover]
-image = 'mindmaze.jpg'
-alt = "Mindmaze - Copyright Microsoft 1993"
-caption = "Mindmaze - Copyright Microsoft 1993"
-relative = true
-
-# publishDate =
-# lastmod = 
-# showtoc = 
 +++
 
-I've always loved quizzes and trivia, and, when I was a kid, one of my favorite games was [MindMaze](https://www.kotaku.com.au/2020/07/encarta-mindmaze-94-95-the-kotaku-australia-review/). For those of you who aren't familiar, MindMaze was a trivia game that was published as a part of Microsoft's Encarta, a digital multimedia encyclopedia. Ever since Wikipedia launched though, encyclopedias like Encarta became less popular, since they were published in fixed, yearly iterations, were published on CDs, and, well, they cost money. The worst part about it though was that meant no more MindMaze!
+I've always loved quizzes and trivia. As a kid, one of my favorite games was [MindMaze](https://www.kotaku.com.au/2020/07/encarta-mindmaze-94-95-the-kotaku-australia-review/). For those unfamiliar, MindMaze was a trivia game included in Microsoft's Encarta, a digital multimedia encyclopedia. However, with the advent of Wikipedia, encyclopedias like Encarta became less popular. They were published in fixed, yearly iterations, distributed on CDs, and, most importantly, they cost money. The decline of Encarta also meant the end of MindMaze, which was disappointing for trivia enthusiasts like me.
 
-So this got me thinking, why couldn't we have a Wikipedia-based MindMaze clone? The most important part of this project are, of course, the questions.
+This got me thinking: why not create a Wikipedia-based MindMaze clone? The most crucial part of such a project is, of course, the questions.
 
-With the advent of LLMs, generating all kinds of text, including questions, has become easy and accessible. For this project, we will be leveraging LLMs but we will feed our own, curated data into them in order to try and diminish the effect of hallucinations.
+With the rise of LLMs, generating various types of text, including questions, has become both easy and accessible. For this project, we will leverage LLMs but feed them curated data to minimize hallucinations.
 
-This is the rough plan:
+Here’s the rough plan:
 
-1. Fetch and prepare Wikipedia data (the focus of today's post)
-2. Prompt LLM for a question based on a passed-in Wikipedia article
+1. Fetch and prepare Wikipedia data (the focus of today’s post).
+2. Prompt the LLM to generate a question based on a given Wikipedia article.
 
-While getting the contents of a Wikipedia article is easy, Wikipedia has politely asked its users to not scrape their pages (to avoid increased load, bot traffic, etc.). What they recommend is that users download [dumps](https://dumps.wikimedia.org/). These dumps are generated regularly and fit our use-case nicely, since we don't care that our data is super recent, and as an added benefit it allows us to completely decouple our system from Wikipedia.
+While accessing the contents of a Wikipedia article is straightforward, Wikipedia explicitly requests users not to scrape their pages to avoid increased load and bot traffic. Instead, they recommend downloading [dumps](https://dumps.wikimedia.org/). These dumps are generated regularly and suit our use case well since we don’t need the most up-to-date data. Additionally, using dumps allows us to completely decouple our system from Wikipedia.
 
-One small problem with the dump is, is that it is quite large. For example, `enwiki-20240601-pages-articles-multistream.xml.bz2` takes up around 22GB of disk space (and that's compressed!). And while we can say that that's expected (there's a lot of information on Wikipedia, after all), what does pose a problem is that this whole dump is _one file_. This definitely doesn't fit our use case well. We want to be be able to easily fetch a single article's content and include it in our prompt.
+One challenge with these dumps is their size. For instance, `enwiki-20240601-pages-articles-multistream.xml.bz2` is approximately 22GB compressed. While this size is expected given the vast amount of information on Wikipedia, the real issue is that the entire dump is contained in a single file. This format doesn’t align well with our use case, as we need to easily fetch the content of individual articles to include in our prompts.
 
-So, how do we tackle this? There are many different ways we can slice up one large XML file, but since this task sounds a lot like an ETL job, I decided to use Apache Spark. The benefit of using Spark is that there are multiple integrations already available and we don't need to worry too much about how to read and write our data, while the slicing up and cleaning can be easily done with the standard DataFrame API. Another (and usually important) benefit is that, if we have the hardware available, we can run our ETL job on a Spark cluster and process all of that data more quickly.
+So, how do we address this? There are many ways to split a large XML file, but since this task resembles an ETL job, I decided to use Apache Spark. Spark offers multiple integrations, simplifying the process of reading and writing data. Additionally, the slicing and cleaning can be efficiently handled using the standard DataFrame API. If the necessary hardware is available, we can even run the ETL job on a Spark cluster to process the data more quickly.
 
-Our plan is:
+Our plan is as follows:
 
-1. Extract: read in the compressed XML file into a DataFrame
-2. Transform: clean up the data as necessary (drop certain rows/columns, clean up strings, etc.)
-3. Load: write the data into a data store that allows easy access to individual articles (e.g., a relational database) 
+1. Extract: Read the compressed XML file into a DataFrame.
+2. Transform: Clean the data as needed (e.g., drop certain rows/columns, clean up strings).
+3. Load: Write the data into a datastore that allows easy access to individual articles (e.g., a relational database).
 
 You can find the full code examples in [this GitHub repository](https://github.com/mkolarek/questions).
 
-## Data pre-processing
+## Data Pre-Processing
 
-Before we start our work on this ETL job though, it would be a good idea to speed up our feedback cycle by getting as much information we can about our data. The goal is to not have to load all of the data every time we want to try to e.g., figure out how to access a nested column. And what can help us here the most? Knowing the schema of our data is a good start, while for speeding up our feedback cycle we can sample our data and use that sample instead of the whole thing. 
+Before diving into the ETL job, it’s a good idea to speed up our feedback cycle by gathering as much information as possible about our data. The goal is to avoid loading the entire dataset every time we need to, for example, figure out how to access a nested column. Two strategies can help here: understanding the schema of our data and using a sample instead of the full dataset.
 
-For the schema part, it's good to understand how Spark works to see how this is beneficial. When we read data into a Spark DataFrame, Spark "magically" processes and parses everything for us so we can access all columns and rows. There's no magic of course, but what Spark does do for us it tries to infer the schema of our data before it allows us to do any further processing. This step is quite resource intensive, since it requires a thorough pass through our whole dataset, but when it's done, we can store the schema separately and reuse it. This allows us to later skip the schema inferring and speeds up our full-blown ETL job.
+Understanding the schema is crucial. When Spark reads data into a DataFrame, it infers the schema, allowing us to access all columns and rows. However, schema inference is resource-intensive as it requires a thorough pass through the entire dataset. Once inferred, we can store the schema separately and reuse it, skipping the inference step and speeding up the ETL job.
 
-For the sampling part, the Spark DataFrame API exposes a `.sample()` function that allows us to do exactly what we want, sample our data and generate a much smaller (and hopefully representative) data subset. A small caveat here is that we need to be careful and not fully depend on our sample, since it depends very much on the attributes of our data - if our data is very skewed and we create a very small sample, it could happen that we miss some very important outliers that are going to break our ETL job down the line. The sample is still very useful though, because we can develop our ETL job much faster and it saves us a lot of time in our initial development.
+Sampling is another useful strategy. The Spark DataFrame API provides a `.sample()` function, enabling us to create a smaller, representative subset of the data. However, we must be cautious not to rely entirely on the sample, as it may miss important outliers, especially if the data is skewed. Despite this limitation, sampling significantly accelerates initial development and saves time.
 
-While Spark has a lot of integrations built-in, XML still isn't one of them. For Spark to be able to read in XML data, we need to use the external `spark-xml` package developed by Databricks. 
+While Spark includes many built-in integrations, XML is not one of them. To read XML data, we need the external `spark-xml` package developed by Databricks.
 
-When reading files, the API has several options but the two most interesting for us are:
+When reading files, the API offers several options, but the two most relevant for us are:
 
-- `rowTag`: Which tag to treat as a row.
-- `samplingRatio`: Sample ratio for schema inferring. Allows for speed up of the inferring itself.
+- `rowTag`: Specifies which tag to treat as a row.
+- `samplingRatio`: Defines the sample ratio for schema inference, speeding up the process.
 
-While this looks simple enough, we've encountered a problem - how do we know which tag to treat as a row? It's kind of a "chicken-and-egg" problem, because we need to know the schema before we try to infer it. To get around this issue, we need to peek into our data a little, and we can do it with a couple of terminal tools. In our `bash` command line we run the following:
+This seems straightforward, but there’s a catch: how do we determine which tag to treat as a row? It’s a classic “chicken-and-egg” problem because we need to know the schema before inferring it. To resolve this, we can peek into the data using a few terminal tools. Running the following command in the `bash` terminal provides a glimpse into the data:
 
 `bzip2 -dkc enwiki-20240601-pages-articles-multistream.xml.bz2 | head -n 100 | less`
 
-What this does is:
+Here’s what each part of the command does:
 
-1. `bzip2` decompresses our `.bz2` archive with `-d`, keeps our original file with `-k` and pipes the decompressed output to `stdout` with `-c`
-2. `head` keeps the first `-n` rows out the piped input
-3. `less` keeps the piped input in a buffer we can navigate
+1. `bzip2` decompresses the `.bz2` archive (`-d`), keeps the original file (`-k`), and pipes the decompressed output to `stdout` (`-c`).
+2. `head` extracts the first `-n` rows from the piped input.
+3. `less` buffers the piped input for navigation.
 
-With a trial-and-error number of 100 for `-n` we get a nice glimpse into our data, and here we have two big discoveries:
+Using a trial-and-error approach with `-n 100`, we can inspect the data. Two key observations emerge:
 
-- it looks like `page` is an XML tag that could nicely split our data on a per row basis
-- there's an XML schema linked!
+- The `page` tag appears to be a suitable candidate for splitting the data into rows.
+- An XML schema is linked within the data.
 
-We could, in theory, use the linked XML schema instead of trying to infer it, but unfortunately the Python API of our `spark-xml` package doesn't nicely support passing in XSD files yet. 
-
-Still, we now have a good `rowTag` candidate and we can start with our schema inferring and sampling. Here's the schema inferring script:
+In theory, we could use the linked XML schema instead of inferring it. However, the Python API of the `spark-xml` package doesn’t yet support passing XSD files. Nevertheless, we now have a good `rowTag` candidate and can proceed with schema inference and sampling. Here's the schema inferring script:
 
 ```python
 import argparse
