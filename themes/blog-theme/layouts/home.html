@@ -10,7 +10,7 @@
   </div>
   <div class="home-hero-content">
     <h1>{{ .Title }}</h1>
-    {{ .Content }}
+    <div style="text-align: justify;">{{ .Content }}</div>
     {{ with site.Params.resume }}<a href="/{{ . }}" target="_blank" rel="noopener">Resume</a>{{ end }} | 
     {{ with site.Params.email }}<a href="mailto:{{ . }}" target="_blank" rel="noopener">E-mail</a>{{ end }} | 
     {{ with site.Params.linkedin }}<a href="https://linkedin.com/in/{{ . }}" target="_blank"
