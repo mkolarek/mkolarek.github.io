@@ -1,10 +1,4 @@
 <div class="site-title">
   <h1><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></h1>
 </div>
-<button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-<div class="menu-overlay"></div>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+{{ partial "menu.html" . }}

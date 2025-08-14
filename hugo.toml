@@ -1,6 +1,6 @@
 baseURL = 'https://markokolarek.com/'
 languageCode = 'en-us'
-title = 'Marko Kolarek'
+title = "Marko's Blog"
 theme = 'blog-theme'
 
 [Params]
@@ -9,24 +9,9 @@ email = 'marko@markokolarek.com'
 linkedin = 'mkolarek'
 github = 'mkolarek'
 
-
-
-[menu]  
-
-  # [[menu.main]]
-  #   identifier = "home"
-  #   name = "Home"
-  #   url = "/"
-  #   weight = 10
-
+[menu]
   [[menu.main]]
     identifier = "posts"
-    name = "Blog"
+    name = "Posts"
     url = "/posts/"
     weight = 10
-
-  # [[menu.main]]
-  #   identifier = "about"
-  #   name = "About"
-  #   url = "/about/"
-  #   weight = 30
