@@ -6,7 +6,7 @@ tags = ['Data Engineering', 'Trivia', 'Large Language Model']
 
 Last time, we discussed how to prepare the data for our question-generating system. To recap, here was the rough plan:
 
-1. Fetch and prepare Wikipedia data (see more [here](https://mkolarek.github.io/posts/asking-questions-pt-1/))
+1. Fetch and prepare Wikipedia data (see more [in my previous post](https://mkolarek.github.io/posts/asking-questions-pt-1/))
 2. Use an LLM to generate questions based on a given Wikipedia article (the focus of today's post)
 
 There are numerous LLM services available online, but for our purposes, we'll use an open-source solution that can be run locally on our machine: [ollama](https://ollama.com). This tool acts as a wrapper around popular, freely available models, providing a uniform API and CLI while managing model downloads for us.
