@@ -3,13 +3,11 @@
   <div class="home-hero-content">
     <h1>{{ .Title }}</h1>
     <div style="text-align: justify;">{{ .Content }}</div>
-    {{ with site.Params.resume }}<a href="/{{ . }}" target="_blank" rel="noopener">Resume</a>{{ end }} | 
-    {{ with site.Params.email }}<a href="mailto:{{ . }}" target="_blank" rel="noopener">E-mail</a>{{ end }} | 
+    {{ with site.Params.resume }}<a href="/{{ . }}" target="_blank" rel="noopener">Resume</a>{{ end }} |
+    {{ with site.Params.email }}<a href="mailto:{{ . }}" target="_blank" rel="noopener">E-mail</a>{{ end }} |
     {{ with site.Params.linkedin }}<a href="https://linkedin.com/in/{{ . }}" target="_blank"
-      rel="noopener">LinkedIn</a>{{ end }} | 
-    {{ with site.Params.github }}<a href="https://g
-
-{{ $posts := where site="_blank" rel="noopener">GitHub</a>{{ end }}
+      rel="noopener">LinkedIn</a>{{ end }} |
+    {{ with site.Params.github }}<a href="https://github.com/{{ . }}" target="_blank">GitHub</a>{{ end }}
   </div>
 </div>
 
@@ -27,7 +25,7 @@
       <span class="meta-divider">·</span>
       <span class="mini-tags">
         {{ range first 3 . }}
-        <a href="{{ (site.GetPage (printf "/tags/%s" .)).RelPermalink }}">{{ . }}</a>
+        <a href="{{ (site.GetPage (printf " /tags/%s" .)).RelPermalink }}">{{ . }}</a>
         {{ end }}
       </span>
       {{ end }}
