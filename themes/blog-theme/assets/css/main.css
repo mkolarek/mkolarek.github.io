@@ -289,7 +289,6 @@ nav a.active:after {
   padding-bottom: 0.75rem;
 }
 
-.intro article,
 .posts article,
 .posts-list article {
   margin-bottom: 2rem;
@@ -297,7 +296,6 @@ nav a.active:after {
   border-bottom: 1px solid var(--border-color);
 }
 
-.intro article h3,
 .posts article h3,
 .posts-list article h2 {
   margin-top: 0;
@@ -308,7 +306,6 @@ nav a.active:after {
   padding-bottom: 0;
 }
 
-.intro article h3 a,
 .posts article h3 a,
 .posts-list article h2 a {
   color: var(--text-color);
