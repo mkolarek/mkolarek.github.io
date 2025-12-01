@@ -195,7 +195,7 @@ nav a.active:after {
 }
 
 .page-content header {
-  /* text-align: center; */
+  text-align: center;
   border-bottom: none;
   margin-bottom: 1rem;
   margin-left: 0;
@@ -267,13 +267,13 @@ nav a.active:after {
   overflow-wrap: break-word;
 }
 
-.recent-posts {
-  /* margin-top: 4rem; */
+.intro,
+.posts {
   width: 100%;
   max-width: 800px;
 }
 
-.recent-posts h2,
+.posts h2,
 .posts-list h2 {
   font-size: 1.75rem;
   font-weight: 700;
@@ -282,14 +282,23 @@ nav a.active:after {
   border-bottom: 2px solid var(--border-color);
 }
 
-.recent-posts article,
+.intro h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.intro article,
+.posts article,
 .posts-list article {
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--border-color);
 }
 
-.recent-posts article h3,
+.intro article h3,
+.posts article h3,
 .posts-list article h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -299,7 +308,8 @@ nav a.active:after {
   padding-bottom: 0;
 }
 
-.recent-posts article h3 a,
+.intro article h3 a,
+.posts article h3 a,
 .posts-list article h2 a {
   color: var(--text-color);
 }
@@ -407,12 +417,14 @@ nav a.active:after {
     font-size: 1.2rem;
   }
 
-  .recent-posts h2,
+  .intro h2,
+  .posts h2,
   .posts-list h2 {
     font-size: 1.5rem;
   }
 
-  .recent-posts article h3,
+  .intro article h3,
+  .posts article h3,
   .posts-list article h2 {
     font-size: 1.3rem;
   }

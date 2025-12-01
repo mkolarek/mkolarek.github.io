@@ -1,14 +1,12 @@
 {{ define "main" }}
-<div class="page-content">
-  <header>
-    <h1>{{ .Title | .RenderString }}</h1>
-  </header>
-  <div style="text-align: justify;">{{ .Content }}</div>
+<div class="intro">
+  <h2>{{ .Title | .RenderString }}</h2>
+  <div>{{ .Content }}</div>
 </div>
 
 {{ $posts := where site.RegularPages "Type" "posts" }}
 {{ if gt (len $posts) 0 }}
-<div class="recent-posts">
+<div class="posts">
   <h2>Posts</h2>
   {{ range $posts }}
   <article>
