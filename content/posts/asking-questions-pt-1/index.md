@@ -1,7 +1,6 @@
 +++
 title = 'Asking questions (pt. 1)'
 date = 2024-07-19T08:00:00+02:00
-tags = ['Data Engineering', 'Trivia']
 +++
 
 I've always loved quizzes and trivia. As a kid, one of my favorite games was [MindMaze](https://www.kotaku.com.au/2020/07/encarta-mindmaze-94-95-the-kotaku-australia-review/). For those unfamiliar, MindMaze was a trivia game included in Microsoft's Encarta, a digital multimedia encyclopedia. However, with the advent of Wikipedia, encyclopedias like Encarta became less popular. They were published in fixed, yearly iterations, distributed on CDs, and, most importantly, they cost money. The decline of Encarta also meant the end of MindMaze, which was disappointing for trivia enthusiasts like me.

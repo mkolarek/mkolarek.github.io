@@ -1,7 +1,6 @@
 +++
 title = 'Asking questions (pt. 2)'
 date = 2024-08-16T10:00:00+02:00
-tags = ['Data Engineering', 'Trivia', 'Large Language Model']
 +++
 
 Last time, we discussed how to prepare the data for our question-generating system. To recap, here was the rough plan:

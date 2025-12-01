@@ -8,7 +8,7 @@ hideDate = true
 ## Contact information
 
 Website owner: Marko Kolarek  
-Email: marko (dot) kolarek (at) proton (dot) me  
+Email: marko (at) markokolarek (dot) com  
 Address: Blücherstr. 14, 10961 Berlin  
 
 ## Terms of service

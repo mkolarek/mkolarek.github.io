@@ -1,18 +1,8 @@
 baseURL = 'https://markokolarek.com/'
 languageCode = 'en-us'
-title = "Marko's Blog"
+title = "Marko Kolarek"
 theme = 'blog-theme'
+enableEmoji = true
 
 [Params]
-resume = 'pdf/2025-07-21-Resume-Marko-Kolarek.pdf'
-email = 'marko@markokolarek.com'
-linkedin = 'mkolarek'
-github = 'mkolarek'
 description = 'Personal blog of Marko Kolarek'
-
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 10

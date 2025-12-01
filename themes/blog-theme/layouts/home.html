@@ -1,21 +1,16 @@
 {{ define "main" }}
-<div class="home-hero">
-  <div class="home-hero-content">
-    <h1>{{ .Title }}</h1>
-    <div style="text-align: justify;">{{ .Content }}</div>
-    {{ with site.Params.resume }}<a href="/{{ . }}" target="_blank" rel="noopener">Resume</a>{{ end }} |
-    {{ with site.Params.email }}<a href="mailto:{{ . }}" target="_blank" rel="noopener">E-mail</a>{{ end }} |
-    {{ with site.Params.linkedin }}<a href="https://linkedin.com/in/{{ . }}" target="_blank"
-      rel="noopener">LinkedIn</a>{{ end }} |
-    {{ with site.Params.github }}<a href="https://github.com/{{ . }}" target="_blank">GitHub</a>{{ end }}
-  </div>
+<div class="page-content">
+  <header>
+    <h1>{{ .Title | .RenderString }}</h1>
+  </header>
+  <div style="text-align: justify;">{{ .Content }}</div>
 </div>
 
 {{ $posts := where site.RegularPages "Type" "posts" }}
 {{ if gt (len $posts) 0 }}
 <div class="recent-posts">
-  <h2>Recent Posts</h2>
-  {{ range first 5 $posts }}
+  <h2>Posts</h2>
+  {{ range $posts }}
   <article>
     <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
     {{ if not .Date.IsZero }}
