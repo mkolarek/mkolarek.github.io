@@ -5,4 +5,4 @@ theme = 'blog-theme'
 enableEmoji = true
 
 [Params]
-description = 'Personal blog of Marko Kolarek'
+description = 'Personal blog of Marko Kolarek.'
