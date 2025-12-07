@@ -66,7 +66,7 @@ This website is deployed using GitHub Pages. The static files in the `public` di
 ## Contact
 
 - Website: [markokolarek.com](https://markokolarek.com)
-- Email: marko@markokolarek.com
+- Email: [marko@markokolarek.com](mailto:marko@markokolarek.com)
 - LinkedIn: [mkolarek](https://linkedin.com/in/mkolarek)
 - GitHub: [mkolarek](https://github.com/mkolarek)
 
