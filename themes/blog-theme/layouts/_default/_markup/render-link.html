@@ -1,0 +1,10 @@
+<!--
+Source - https://stackoverflow.com/a
+Posted by I'M YourOnly.One, modified by community. See post 'Timeline' for change history
+Retrieved 2025-12-07, License - CC BY-SA 4.0
+-->
+
+<a href="{{ .Destination | safeURL }}" {{ with .Title }} title="{{ . }}" {{ end }} {{ if or (strings.HasPrefix
+    .Destination "http" ) (strings.HasPrefix .Destination "mailto:" ) }} target="_blank" rel="noopener" {{ end }}>
+    {{ .Text | safeHTML }}
+</a>
