@@ -6,5 +6,6 @@ in
 pkgs.mkShell {
   packages = with pkgs; [
     hugo
+    tree
   ];
 }

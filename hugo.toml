@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = "Marko Kolarek"
 theme = 'blog-theme'
 enableEmoji = true
+disableKinds = ["taxonomy", "term"]
 
 [Params]
 description = 'Personal blog of Marko Kolarek.'
