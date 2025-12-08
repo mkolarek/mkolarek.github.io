@@ -1,23 +1,9 @@
 {{- with resources.Get "css/main.css" }}
   {{- if hugo.IsDevelopment }}
-    <link rel="preload" href="{{ .RelPermalink }}" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ .RelPermalink }}"></noscript>
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- else }}
     {{- with . | minify | fingerprint }}
-      <link rel="preload" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous"></noscipt>
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
     {{- end }}
   {{- end }}
 {{- end }}
-
-<!--
-Source - https://stackoverflow.com/a
-Posted by Rick Hellewell
-Retrieved 2025-12-08, License - CC BY-SA 4.0
--->
-
-<link rel="preload" href="mystylesheet.css" as="style" onload="this.rel='stylesheet'">
-<!-- for browsers without JavaScript enabled -->
-<noscript><link rel="stylesheet" href="mystylesheet.css">
-</noscript>
-
