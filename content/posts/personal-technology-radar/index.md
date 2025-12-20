@@ -1,5 +1,5 @@
 +++
-title = 'Personal Technology Radar'
+title = 'personal technology radar'
 date = 2024-06-25T12:00:00+02:00
 +++
 

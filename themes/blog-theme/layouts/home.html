@@ -7,13 +7,13 @@
 {{ $posts := where site.RegularPages "Type" "posts" }}
 {{ if gt (len $posts) 0 }}
 <div class="posts">
-  <h2>Posts</h2>
+  <h2>posts</h2>
   {{ range $posts }}
   <article>
     <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
     {{ if not .Date.IsZero }}
     <div class="post-meta">
-      <time datetime="{{ .Date.Format " 2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      <time datetime="{{ .Date.Format " 2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
       {{ with .Params.tags }}
       <span class="meta-divider">·</span>
       <span class="mini-tags">
@@ -25,7 +25,7 @@
     </div>
     {{ end }}
     <div class="post-summary">{{ .Summary }}</div>
-    <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+    <a href="{{ .RelPermalink }}" class="read-more">read more →</a>
   </article>
   {{ end }}
 </div>

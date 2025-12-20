@@ -1,5 +1,5 @@
 +++
-title = 'Asking questions (pt. 2)'
+title = 'asking questions (pt. 2)'
 date = 2024-08-16T10:00:00+02:00
 +++
 
@@ -17,7 +17,7 @@ Our approach to using the LLM involves:
 3. Passing the contents of the Wikipedia article as part of a prompt to the model
 4. Receiving a multiple-choice question based on the article
 
-## Deploying a model using ollama
+## deploying a model using ollama
 
 To ensure a clean and reproducible setup, we'll use the official Docker image of `ollama`.
 
@@ -148,7 +148,7 @@ $ curl http://localhost:11434/api/generate -d '{
 
 Here, we've sent a request via `curl` containing the same prompt. However, we've requested a non-streaming response (by setting `stream` to false), so we receive the entire response at once.
 
-## Getting a random Wikipedia article from our database
+## getting a random wikipedia article from our database
 
 The simplest approach is to pick a random number (X) between 1 and N, where N is the total number of Wikipedia articles in our database, and then query the contents of the X-th article.
 
@@ -182,7 +182,7 @@ WHERE row_id = (
 
 Running this query multiple times confirms that we get different random articles. However, some article titles start with the prefix `Category:`, which are meta-articles rather than "true" articles. These aren't useful for our use case, so we should remove them from our database.
 
-### Some ad-hoc data cleaning
+### some ad-hoc data cleaning
 
 Let's check for other similar meta-articles:
 
@@ -252,7 +252,7 @@ To add this filtering to our ETL job from the previous post:
 
 Great! Now that we have all the components ready, let's put them together.
 
-## Question generator API
+## question generator API
 
 Instead of writing a script to generate a new question each time it's run, I decided to build a small API service. This allows it to become a component of a larger system (e.g., a game like MindMaze) while being easily accessible via a web browser. To keep things simple, we'll use `flask`, which supports both API endpoints and HTML templating (for a nicer UI).
 
@@ -479,7 +479,7 @@ def result():
 </html>
 ```
 
-## Answering questions
+## answering questions
 
 Now we come to the fun part! Let's run our `flask` web app and try to answer a couple of questions:
 

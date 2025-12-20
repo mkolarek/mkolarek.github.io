@@ -1,6 +1,6 @@
 baseURL = 'https://markokolarek.com/'
 languageCode = 'en-us'
-title = "Marko Kolarek"
+title = "markokolarek.com"
 theme = 'blog-theme'
 enableEmoji = true
 disableKinds = ["taxonomy", "term"]

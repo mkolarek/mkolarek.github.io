@@ -1,5 +1,5 @@
 +++
-title = 'Asking questions (pt. 1)'
+title = 'asking questions (pt. 1)'
 date = 2024-07-19T08:00:00+02:00
 +++
 
@@ -28,7 +28,7 @@ Our plan is as follows:
 
 You can find the full code examples in [this GitHub repository](https://github.com/mkolarek/questions).
 
-## Data Pre-Processing
+## data pre-processing
 
 Before diving into the ETL job, it’s a good idea to speed up our feedback cycle by gathering as much information as possible about our data. The goal is to avoid loading the entire dataset every time we need to, for example, figure out how to access a nested column. Two strategies can help here: understanding the schema of our data and using a sample instead of the full dataset.
 
@@ -132,7 +132,7 @@ sample = df.sample(0.0001)
 
 If you're running these scripts on your local machine, make sure to give your Spark driver lots of memory, since it's doing all of the work (there are no executors in a local setup).
 
-## Data exploration
+## data exploration
 
 Let's fire up a Spark shell and have a look at what we got until now:
 
@@ -353,7 +353,7 @@ And we can add the nested column fields with `.withColumns()`:
 only showing top 20 rows
 ```
 
-## Data processing
+## data processing
 
 We're quite close now! We have our basic article data, like the title and the text, and we've removed some unnecessary rows. The last building block for our ETL job is loading the data into some kind of data store. 
 
@@ -421,7 +421,7 @@ flattened = spark.sql("SELECT {} FROM wiki".format(", ".join(flatten(schema))))
 
 The reading in of the data and the filtering should be familiar, but we've switched to the Spark SQL API instead of using the DataFrame API for exposing the nested columns. The reason for this is that there is no built-in way to "flatten" a nested structure like we have, so we needed to resort to a custom recursion. This gives us an automated way to discover all nested fields and to name them appropriately, cleaning up any unsupported characters we might encounter. And since we're working with strings, it's easy to build a SQL query that targets the nested fields and assigns aliases. 
 
-## Wrapping up
+## wrapping up
 
 This is a good place to stop for now, since we have our data in a nice and workable state. Stay tuned for the second part, where we will continue with querying our data against our locally deployed LLM!
 
