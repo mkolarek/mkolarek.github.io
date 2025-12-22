@@ -2,59 +2,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
-<!-- Critical CSS: paste into <head> -->
-<style>
-  /* color tokens copied from your full stylesheet */
-  :root{
-    --text-color:#1e293b;
-    --light-text:#64748b;
-    --background:#ffffff;
-    --light-bg:#f8fafc;
-    --border-color:#e2e8f0;
-    --link-color:#06f;
-  }
+<style type="text/css">
+	body {
+		margin: 40px auto;
+		max-width: 650px;
+		padding: 0 10px
+	}
+	
+	header, main {
+		border-bottom: 1px solid #ddd;
+	}
 
-  /* Basic page reset & text */
-  html,body{height:100%; margin:0; padding:0; background:var(--background); color:var(--text-color); -webkit-font-smoothing:antialiased;}
-  body{font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height:1.7; font-size:16px; overflow-x:hidden;}
+	footer {
+    		text-align: center;
+	}
 
-  /* Container used site-wide */
-  .container{width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem; box-sizing:border-box;}
+	pre, img {
+		max-width: 100%;
+	}
 
-  /* Header (above the fold) */
-  header{border-bottom:1px solid var(--border-color); padding:1.25rem 0; margin:1rem 1rem; background:var(--background); box-shadow:0 1px 3px rgba(0,0,0,0.05);}
-  header .container{display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:44px;}
-  .site-title h1{margin:0; font-size:1.5rem; font-weight:600;}
-  .site-title h1 a{color:var(--text-color); text-decoration:none;}
-
-  /* Basic link appearance so nav/footer look correct initially */
-  a{color:var(--link-color); text-decoration:none;}
-
-  /* Intro/posts headings visible above the fold */
-  .intro, .posts{width:100%; max-width:800px; margin:0 auto;}
-  .intro h2, .posts h2{font-size:1.75rem; font-weight:700; margin:0 0 1rem 0; padding-bottom:0.75rem; border-bottom:2px solid var(--border-color);}
-
-  /* Article titles / read-more small styles to avoid jumping */
-  .posts article h3{margin:0 0 0.75rem 0; font-size:1.5rem; font-weight:600;}
-  .read-more{display:inline-block; font-weight:500; font-size:0.875rem;}
-
-  /* Footer minimal look so page bottom doesn't jump when visible */
-  footer{border-top:1px solid var(--border-color); margin-top:3rem; padding:1.5rem 0; color:var(--light-text); background:var(--light-bg); font-size:0.875rem;}
-
-  /* Responsive tweaks used above the fold */
-  @media (max-width:768px){
-    .container{padding:0 1rem;}
-    header .container{flex-direction:column; align-items:flex-start; padding:0;}
-    .intro h2, .posts h2{font-size:1.5rem;}
-  }
-
-  @media (max-width:480px){
-    .container{padding:0 0.75rem;}
-    .site-title h1{font-size:1.25rem;}
-    .intro h2, .posts h2{font-size:1.4rem;}
-  }
-
-  /* make images not cause width jumps if any above the fold */
-  img{max-width:100%; height:auto; display:block;}
+	pre {
+		overflow-x: auto;
+		padding: 1rem;
+	}
 </style>
 {{ partialCached "head/css.html" . }}
