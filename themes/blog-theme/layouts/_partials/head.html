@@ -1,31 +1,39 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>
+    {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title
+    site.Title }}{{ end }}
+</title>
+<meta
+    name="description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}"
+/>
 <style type="text/css">
-	body {
-		margin: 40px auto;
-		max-width: 650px;
-		padding: 0 1rem;
-		font-family: system-ui;
-	}
-	
-	header, main {
-		border-bottom: 1px solid #ddd;
-		padding-bottom: 1rem;
-	}
+    body {
+        margin: 40px auto;
+        max-width: 650px;
+        padding: 0 1rem;
+        font-family: system-ui;
+    }
 
-	footer {
-    		text-align: center;
-	}
+    header,
+    main {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1rem;
+    }
 
-	pre, img {
-		max-width: 100%;
-	}
+    footer {
+        text-align: center;
+    }
 
-	pre {
-		overflow-x: auto;
-		padding: 1rem;
-	}
+    pre,
+    img {
+        max-width: 100%;
+    }
+
+    pre {
+        overflow-x: auto;
+        padding: 1rem;
+    }
 </style>
 {{ partialCached "head/css.html" . }}

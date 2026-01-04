@@ -19,5 +19,3 @@ Using this Jupyter Python notebook, you can easily create your own radar. Simply
 
 Cheers,  
 Marko
-
-
