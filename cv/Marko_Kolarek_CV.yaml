@@ -87,7 +87,7 @@ cv:
         end_date: 2014-07
         location: Zagreb, Croatia
         highlights:
-          - Majored in computer vision, developed thesis in C++ (OpenCV).
+          - Majored in computer vision (face detection), developed thesis in C++ (OpenCV).
       - institution: FER, University of Zagreb
         area: Information Processing and Multimedia Systems
         degree: BSc
@@ -97,7 +97,7 @@ cv:
         location: Zagreb, Croatia
         # summary:
         highlights:
-          - Majored in computer vision, developed thesis in C++ (OpenCV).
+          - Majored in computer vision (face detection), developed thesis in C++ (OpenCV).
     skills:
       - label: Programming
         details: Python (PySpark, Pandas, Flask, Django), Scala (Spark), SQL, Terraform
