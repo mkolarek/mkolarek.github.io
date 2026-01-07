@@ -1,0 +1,133 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
+cv:
+  name: Marko Kolarek
+  location: Berlin, Germany
+  email: marko.kolarek@proton.me
+  phone: +49 162 518 2782
+  website: https://markokolarek.com
+  sections:
+    Summary:
+      - Senior data engineer with extensive experience designing and implementing scalable data architectures on AWS and MS Azure. Expertise includes building robust data pipelines, managing large-scale migrations, and optimizing cloud infrastructure for e-commerce, fintech, and legaltech companies.
+    experience:
+      - company: Contentful GmbH
+        position: Senior Data Platform Engineer
+        start_date: 2025-10
+        end_date: 2026-01
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Designed new data platform architecture.
+          - Maintained and improved data ingestion pipelines on AWS (Lambda, S3).
+          - Migrated and backfilled raw log data on AWS (DataSync, S3, Redshift).
+      - company: ATMO GmbH
+        position: Fractional CTO
+        start_date: 2025-01
+        end_date: 2025-07
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Built production-ready carbon management platform end-to-end, using AWS, Python (Django) and Terraform.
+          - Implemented LLM-based workflow automations using Google Gemini.
+      - company: Self-employed
+        position: Senior Data Engineering Consultant
+        start_date: 2024-04
+        end_date: 2025-10
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Designed and implemented data platform architecture.
+          - Prototyped and productionized machine learning systems.
+      - company: GROPYUS Technologies GmbH
+        position: Staff Data Engineer
+        start_date: 2023-03
+        end_date: 2024-03
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Designed and implemented data architecture on and data modeling on MS Azure to ensure integration with IT systems.
+          - Led daily operations of data teams and collaborated with product management on technical roadmaps.
+          - Contributed to service mesh integration planning and implementation on MS Azure (HCP Consul, linkerd, Terraform).
+      - company: VAAAM AG
+        position: Head of Data
+        start_date: 2022-04
+        end_date: 2023-02
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Managed data and backend engineering teams.
+          - Designed and implemented data architecture and models (AWS, Python) while collaborating on product strategy.
+          - Maintained existing services and migrated to new platform (Python, Java).
+      - company: GROPYUS Technologies GmbH
+        position: Senior Data Engineer
+        start_date: 2020-10
+        end_date: 2022-03
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Developed event-based streaming pipelines using serverless solutions on MS Azure.
+          - Implemented digital twin infrastructure based on semantic web stack (RDF).
+      - company: DAIN Studios GmbH
+        position: Senior Data Engineering Consultant
+        start_date: 2019-03
+        end_date: 2020-10
+        location: Berlin, Germany (hybrid)
+        highlights:
+          - Developed data ingestion and processing pipelines in Apache Spark (Python & Scala) and Apache Hive.
+          - Designed and implemented customer data platform infrastructure on MS Azure.
+    previous_experience:
+      - label: Data Engineer, FlixBus SE (2018)
+        date: 2018-01
+        details: Implemented and maintained data pipelines for feature engineering using PySpark.
+      - label: Research Engineer, Zalando SE (2016-2018)
+        details: Developed and automated A/B test analyses using Apache Spark, Pandas.
+      - label: Backend Engineer, Zalando SE (2015-2016)
+        details: Built data ingestion and processing pipelines using Python.
+      - label: Research Associate, Visage Technologies AB (2014-2015)
+        details: Researched and implemented eye gaze detection models using OpenCV (C++, Python).
+    education:
+      - institution: FER, University of Zagreb
+        area: Information Processing
+        degree: MSc
+        date:
+        start_date: 2012-10
+        end_date: 2014-07
+        location: Zagreb, Croatia
+        highlights:
+          - Majored in computer vision, developed thesis in C++ (OpenCV).
+      - institution: FER, University of Zagreb
+        area: Information Processing and Multimedia Systems
+        degree: BSc
+        date:
+        start_date: 2008-10
+        end_date: 2012-07
+        location: Zagreb, Croatia
+        # summary:
+        highlights:
+          - Majored in computer vision, developed thesis in C++ (OpenCV).
+    skills:
+      - label: Programming
+        details: Python (PySpark, Pandas, Flask, Django), Scala (Spark), SQL, Terraform
+      - label: Cloud infrastructure
+        details: Amazon Web Services (S3, RDS, Redshift, EMR, Lambda, EC2, ...), Microsoft Azure (AKS, Functions, Blob Storage, Event Hub, ...), Kubernetes, Docker
+      - label: Databases
+        details: Postgres (Amazon RDS, Azure Database), Amazon Redshift, Google BigQuery, EXASOL, MongoDB, Cassandra
+      - label: Data
+        details: Apache Spark, Apache Hive, Apache Kafka
+      - label: Languages
+        details: English (fluent), Croatian (native), German (basic)
+    interests:
+      - Running, hiking and cats.
+design:
+  theme: moderncv
+locale:
+  language: english
+settings:
+  current_date: "2026-01-07"
+  render_command:
+    design:
+    locale:
+    typst_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.typ
+    pdf_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.pdf
+    markdown_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.md
+    html_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.html
+    png_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.png
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: true
+  bold_keywords: []

@@ -50,6 +50,14 @@ hugo
 
 This will generate the static site in the `public` directory.
 
+### Building CV
+
+The CV YAML file found in `cv/` can be built with the `rendercv` Python package:
+
+```
+uv run rendercv render --pdf-path ../static/pdf/Marko_Kolarek_CV.pdf Marko_Kolarek_CV.yaml
+```
+
 ## Project Structure
 
 - `content/`: Contains all the website content in Markdown format

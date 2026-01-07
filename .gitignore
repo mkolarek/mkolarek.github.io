@@ -25,3 +25,7 @@ Thumbs.db
 
 # Nix artifacts
 .direnv/
+
+# Python
+*.venv/
+cv/rendercv_output/

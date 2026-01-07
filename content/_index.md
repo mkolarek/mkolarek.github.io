@@ -8,4 +8,4 @@ draft = false
 - data engineer (10 years of experience)
 - based in berlin :de: (originally from zagreb :croatia:)
 - married (3 cats)
-- [email](mailto:marko@markokolarek.com), [linkedin](https://www.linkedin.com/in/mkolarek), [github](https://www.github.com/mkolarek) (and [resume](pdf/2025-07-21-Resume-Marko-Kolarek.pdf))
+- [email](mailto:marko@markokolarek.com), [linkedin](https://www.linkedin.com/in/mkolarek), [github](https://www.github.com/mkolarek) (and [resume](pdf/Marko_Kolarek_CV.pdf))
