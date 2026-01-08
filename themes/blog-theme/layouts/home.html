@@ -10,7 +10,8 @@
   <h2>posts</h2>
   {{ range $posts }}
   <article>
-    <h3>{{ .LinkTitle }}</h3>
+    <!--<h3>{{ .LinkTitle }}</h3>-->
+    <h3><a class="title-link" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
     {{ if not .Date.IsZero }}
     <div class="post-meta">
       <time datetime="{{ .Date.Format " 2006-01-02T15:04:05-07:00" }}">{{ .Date.Format "2006-01-02" }}</time>
